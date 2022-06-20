@@ -1,0 +1,38 @@
+
+@font-face {
+  font-family: trender;
+  src: url(./Trender.ttf);
+}
+
+.home {
+  background: linear-gradient(270.8deg, rgba(255,255,255,1) 0%, rgba(46,49,67,1) 50%, rgba(0,0,0,1) 100%);
+  height: 100%;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  position: absolute;
+  color: white;
+  gap: 65px;
+  width: 100%;
+  justify-content: center;
+}
+
+.smallNav {
+  font-size: 30px;
+  line-height: 130px;
+}
+
+.bigNav {
+  font-size: 94px;
+}
+
+body {
+  font-family: trender;
+  margin: 0;
+}

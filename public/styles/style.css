@@ -1,0 +1,42 @@
+@font-face {
+  font-family: trender;
+  src: url(./Trender.ttf);
+}
+
+.home {
+  background: linear-gradient(270.8deg, white 0%, #2e3143 50%, black 100%);
+  height: 100%;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  color: white;
+  gap: 65px;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.smallNav {
+  font-size: 30px;
+  line-height: 130px;
+}
+
+.bigNav {
+  font-size: 94px;
+}
+
+body {
+  font-family: trender;
+  margin: 0;
+}
+/*# sourceMappingURL=style.css.map */
