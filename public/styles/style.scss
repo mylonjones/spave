@@ -7,11 +7,30 @@
 .home {
   background: linear-gradient(270.8deg, rgba(255,255,255,1) 0%, rgba(46,49,67,1) 50%, rgba(0,0,0,1) 100%);
   height: 100%;
-}
-
-.app {
   width: 100vw;
   height: 100vh;
+  display: inline-block;
+  color: white;
+  font-size: 26px;
+  white-space: pre-wrap;
+}
+
+.production {
+  width: 100vw;
+  height: 100vh;
+  display: inline-block;
+  background-color: black;
+}
+
+.composition {
+  width: 100vw;
+  height: 100vh;
+  display: inline-block;
+  background-color: grey;
+}
+
+.pages {
+  // width: 300vw;
 }
 
 .navbar {
@@ -21,18 +40,75 @@
   gap: 65px;
   width: 100%;
   justify-content: center;
+  text-align: center;
 }
 
 .smallNav {
   font-size: 30px;
   line-height: 130px;
+  height: 130px;
+
+  width: 212px;
+
+  .shadow {
+    color: #b7b7b7;
+  }
+
+  &:hover .shadow {
+    letter-spacing: .8px;
+  }
+
+  .text {
+    top: -100%;
+    position: relative;
+  }
 }
 
 .bigNav {
   font-size: 94px;
+  height: 118px;
+  width: 420px;
+  .shadow {
+    color: #b7b7b7;
+
+  }
+
+  &:hover .shadow {
+    letter-spacing: 1.5px;
+  }
+
+  .text {
+    top: -118px;
+    position: relative;
+  }
 }
 
 body {
   font-family: trender;
   margin: 0;
 }
+
+.questionContainer {
+  padding-top: 350px;
+  width: 15rem;
+  height: 15rem;
+  margin: auto;
+  padding-left: 50px;
+}
+
+.whoAmI {
+
+  text-align: left;
+}
+
+.landingStar {
+  text-align: center;
+    margin: auto;
+    margin-top: -50px;
+    width: fit-content;
+}
+
+.homeStar {
+  width: 150px;
+}
+

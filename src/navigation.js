@@ -2,13 +2,16 @@ export default function Navigation() {
 
   return(<div className='navbar' >
     <div className='smallNav' >
-      PRODUCTION
+      <div className='shadow' >PRODUCTION</div>
+      <div className='text' >PRODUCTION</div>
     </div>
     <div className='bigNav' >
-      APOLLOS
+      <div className='shadow' >APOLLOS</div>
+      <div className='text' >APOLLOS</div>
     </div>
     <div className='smallNav' >
-      COMPOSITION
+      <div className='shadow' >COMPOSITION</div>
+      <div className='text' >COMPOSITION</div>
     </div>
   </div>)
 }

@@ -5,7 +5,11 @@ function App() {
   return (
     <div className="app">
       <Navigation />
-      <Home/>
+      <div className='pages'>
+        {/* <div className='production' ></div> */}
+        <Home/>
+        {/* <div className='composition' ></div> */}
+      </div>
     </div>
   );
 }
