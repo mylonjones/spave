@@ -3,6 +3,11 @@
   src: url(./Trender.ttf);
 }
 
+.app {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 .home {
   background: linear-gradient(270.8deg, white 0%, #2e3143 50%, black 100%);
   height: 100%;
@@ -12,6 +17,7 @@
   color: white;
   font-size: 26px;
   white-space: pre-wrap;
+  vertical-align: top;
 }
 
 .production {
@@ -19,6 +25,45 @@
   height: 100vh;
   display: inline-block;
   background-color: black;
+  vertical-align: top;
+  background-size: 100%;
+}
+
+.whiteStarBackground {
+  width: 100%;
+  height: 100%;
+  background-image: url("images/whiteBackgroundStars.png"), url("images/whiteConst.png");
+  opacity: 0;
+  -webkit-transition: opacity 2s linear;
+  transition: opacity 2s linear;
+}
+
+.showStars {
+  opacity: 1;
+}
+
+.whiteLogo {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  padding-top: 26vh;
+}
+
+.musicStar {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+
+.musicStarImage {
+  width: 65px;
+}
+
+.musicStar1 {
+  top: 20vh;
+  left: 10vw;
 }
 
 .composition {
@@ -26,9 +71,21 @@
   height: 100vh;
   display: inline-block;
   background-color: grey;
+  vertical-align: top;
+}
+
+.pages {
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  white-space: nowrap;
+  -webkit-transform: translateX(-100vw);
+          transform: translateX(-100vw);
 }
 
 .navbar {
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -92,9 +149,6 @@ body {
   height: 15rem;
   margin: auto;
   padding-left: 50px;
-}
-
-.whoAmI {
   text-align: left;
 }
 

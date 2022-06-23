@@ -1,14 +1,15 @@
 import Home from './home'
 import Navigation from './navigation'
+import Production from './production'
 
 function App() {
   return (
     <div className="app">
       <Navigation />
       <div className='pages'>
-        {/* <div className='production' ></div> */}
+        <Production />
         <Home/>
-        {/* <div className='composition' ></div> */}
+        <div className='composition' ></div>
       </div>
     </div>
   );
