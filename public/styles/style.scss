@@ -1,7 +1,14 @@
 
+
+
 @font-face {
   font-family: trender;
   src: url(./Trender.ttf);
+}
+
+body {
+  font-family: trender;
+  margin: 0;
 }
 
 .app {
@@ -19,56 +26,25 @@
   font-size: 26px;
   white-space: pre-wrap;
   vertical-align: top;
-}
 
-.production {
-  width: 100vw;
-  height: 100vh;
-  display: inline-block;
-  background-color: black;
-  vertical-align: top;
-  background-size: 100%;
-}
+  .questionContainer {
+    padding-top: 350px;
+    width: 15rem;
+    height: 15rem;
+    margin: auto;
+    padding-left: 50px;
+    text-align: left;
+  }
 
-.whiteStarBackground {
-  width: 100%;
-  height: 100%;
-  background-image: url("images/whiteBackgroundStars.png"), url("images/whiteConst.png");
-  opacity: 0;
-  transition: opacity 2s linear;
-}
-
-.showStars {
-  opacity: 1;
-}
-
-.whiteLogo {
-  width: fit-content;
-  margin: auto;
-  padding-top: 26vh;
-
-}
-
-.musicStar {
-  width: fit-content;
-  position: relative;
-}
-
-.musicStarImage {
-  width: 65px;
-}
-
-.musicStar1 {
-  top: 20vh;
-  left: 10vw;
-}
-
-.composition {
-  width: 100vw;
-  height: 100vh;
-  display: inline-block;
-  background-color: grey;
-  vertical-align: top;
+  .landingStar {
+    text-align: center;
+    margin: auto;
+    margin-top: -50px;
+    width: fit-content;
+    .homeStar {
+      width: 150px;
+    }
+  }
 }
 
 .pages {
@@ -78,6 +54,7 @@
 }
 
 .navbar {
+  transition: color 1s;
   z-index: 1;
   display: flex;
   position: absolute;
@@ -86,70 +63,46 @@
   width: 100%;
   justify-content: center;
   text-align: center;
-}
 
-.smallNav {
-  font-size: 30px;
-  line-height: 130px;
-  height: 130px;
+  .smallNav {
+    font-size: 30px;
+    line-height: 130px;
+    height: 130px;
 
-  width: 212px;
+    width: 212px;
 
-  .shadow {
-    color: #b7b7b7;
+    .shadow {
+      color: #b7b7b7;
+    }
+
+    &:hover .shadow {
+      letter-spacing: .8px;
+    }
+
+    .text {
+      top: -100%;
+      position: relative;
+    }
   }
 
-  &:hover .shadow {
-    letter-spacing: .8px;
-  }
+  .bigNav {
+    font-size: 94px;
+    height: 118px;
+    width: 420px;
+    .shadow {
+      color: #b7b7b7;
+    }
 
-  .text {
-    top: -100%;
-    position: relative;
-  }
-}
+    &:hover .shadow {
+      letter-spacing: 1.5px;
+    }
 
-.bigNav {
-  font-size: 94px;
-  height: 118px;
-  width: 420px;
-  .shadow {
-    color: #b7b7b7;
-
-  }
-
-  &:hover .shadow {
-    letter-spacing: 1.5px;
-  }
-
-  .text {
-    top: -118px;
-    position: relative;
+    .text {
+      top: -118px;
+      position: relative;
+    }
   }
 }
 
-body {
-  font-family: trender;
-  margin: 0;
-}
-
-.questionContainer {
-  padding-top: 350px;
-  width: 15rem;
-  height: 15rem;
-  margin: auto;
-  padding-left: 50px;
-  text-align: left;
-}
-
-.landingStar {
-  text-align: center;
-  margin: auto;
-  margin-top: -50px;
-  width: fit-content;
-}
-
-.homeStar {
-  width: 150px;
-}
-
+@import './production.scss';
+@import './composition.scss';

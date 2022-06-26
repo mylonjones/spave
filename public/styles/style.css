@@ -3,6 +3,11 @@
   src: url(./Trender.ttf);
 }
 
+body {
+  font-family: trender;
+  margin: 0;
+}
+
 .app {
   width: 100vw;
   overflow-x: hidden;
@@ -20,58 +25,26 @@
   vertical-align: top;
 }
 
-.production {
-  width: 100vw;
-  height: 100vh;
-  display: inline-block;
-  background-color: black;
-  vertical-align: top;
-  background-size: 100%;
-}
-
-.whiteStarBackground {
-  width: 100%;
-  height: 100%;
-  background-image: url("images/whiteBackgroundStars.png"), url("images/whiteConst.png");
-  opacity: 0;
-  -webkit-transition: opacity 2s linear;
-  transition: opacity 2s linear;
-}
-
-.showStars {
-  opacity: 1;
-}
-
-.whiteLogo {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+.home .questionContainer {
+  padding-top: 350px;
+  width: 15rem;
+  height: 15rem;
   margin: auto;
-  padding-top: 26vh;
+  padding-left: 50px;
+  text-align: left;
 }
 
-.musicStar {
+.home .landingStar {
+  text-align: center;
+  margin: auto;
+  margin-top: -50px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  position: relative;
 }
 
-.musicStarImage {
-  width: 65px;
-}
-
-.musicStar1 {
-  top: 20vh;
-  left: 10vw;
-}
-
-.composition {
-  width: 100vw;
-  height: 100vh;
-  display: inline-block;
-  background-color: grey;
-  vertical-align: top;
+.home .landingStar .homeStar {
+  width: 150px;
 }
 
 .pages {
@@ -85,6 +58,8 @@
 }
 
 .navbar {
+  -webkit-transition: color 1s;
+  transition: color 1s;
   z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -99,69 +74,152 @@
   text-align: center;
 }
 
-.smallNav {
+.navbar .smallNav {
   font-size: 30px;
   line-height: 130px;
   height: 130px;
   width: 212px;
 }
 
-.smallNav .shadow {
+.navbar .smallNav .shadow {
   color: #b7b7b7;
 }
 
-.smallNav:hover .shadow {
+.navbar .smallNav:hover .shadow {
   letter-spacing: .8px;
 }
 
-.smallNav .text {
+.navbar .smallNav .text {
   top: -100%;
   position: relative;
 }
 
-.bigNav {
+.navbar .bigNav {
   font-size: 94px;
   height: 118px;
   width: 420px;
 }
 
-.bigNav .shadow {
+.navbar .bigNav .shadow {
   color: #b7b7b7;
 }
 
-.bigNav:hover .shadow {
+.navbar .bigNav:hover .shadow {
   letter-spacing: 1.5px;
 }
 
-.bigNav .text {
+.navbar .bigNav .text {
   top: -118px;
   position: relative;
 }
 
-body {
-  font-family: trender;
-  margin: 0;
+.production {
+  width: 100vw;
+  height: 100vh;
+  display: inline-block;
+  background-color: black;
+  vertical-align: top;
+  background-size: 100%;
+  color: white;
 }
 
-.questionContainer {
-  padding-top: 350px;
-  width: 15rem;
-  height: 15rem;
-  margin: auto;
-  padding-left: 50px;
-  text-align: left;
+.production .whiteStarBackground {
+  width: 100%;
+  height: 100%;
+  background-image: url("images/whiteBackgroundStars.png"), url("images/whiteConst.png");
+  opacity: 0;
+  -webkit-transition: opacity 2s linear;
+  transition: opacity 2s linear;
 }
 
-.landingStar {
-  text-align: center;
-  margin: auto;
-  margin-top: -50px;
+.production .showStars {
+  opacity: 1;
+}
+
+.pageLogo {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  margin: auto;
+  padding-top: 32vh;
 }
 
-.homeStar {
+.musicStars {
+  height: 0;
+}
+
+.musicStars .musicStar {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+}
+
+.musicStars .musicStar .musicStarImage {
+  width: 65px;
+}
+
+.musicStars .musicStar .progressBar {
   width: 150px;
+}
+
+.musicStars .musicStar .progressBar .progressPotential {
+  border: 4px solid gray;
+  border-radius: 4px;
+  position: relative;
+  width: 100%;
+}
+
+.musicStars .musicStar .progressBar .progress {
+  -webkit-transition: width linear;
+  transition: width linear;
+  border: 4px solid #f3f1f5;
+  border-radius: 4px;
+  width: 1%;
+  position: relative;
+  top: -8px;
+}
+
+.musicStarWhite1 {
+  top: 20vh;
+  left: 10vw;
+}
+
+.musicStarWhite2 {
+  top: 14vh;
+  left: 30vw;
+}
+
+.musicStarBlack1 {
+  top: 20vh;
+  left: 210vw;
+}
+
+.musicStarBlack2 {
+  top: 14vh;
+  left: 230vw;
+}
+
+.composition {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  display: inline-block;
+  vertical-align: top;
+  background-size: 100%;
+  color: black;
+}
+
+.composition .blackStarBackground {
+  width: 100%;
+  height: 100%;
+  background-image: url("images/blackBackgroundStars.png"), url("images/blackConst.png");
+  opacity: 0;
+  -webkit-transition: opacity 2s linear;
+  transition: opacity 2s linear;
+}
+
+.composition .showStars {
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */

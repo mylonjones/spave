@@ -1,6 +1,7 @@
 import Home from './home'
 import Navigation from './navigation'
 import Production from './production'
+import Composition from './composition'
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <div className='pages'>
         <Production />
         <Home/>
-        <div className='composition' ></div>
+        <Composition />
       </div>
     </div>
   );

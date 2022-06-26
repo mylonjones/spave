@@ -5,6 +5,8 @@ export default function Navigation() {
 
     const pages = document.getElementsByClassName('pages')[0]
 
+    const nav = document.getElementsByClassName('navbar')[0]
+
     let position = '-100vw'
 
     document.getElementsByClassName('showStars')[0] && document.getElementsByClassName('showStars')[0].classList.remove('showStars')
@@ -13,13 +15,16 @@ export default function Navigation() {
       case 'PRODUCTION':
         position = '0'
         document.getElementsByClassName('whiteStarBackground')[0].classList.add('showStars')
+        nav.style.color = 'white'
         break
       case 'APOLLOS':
-        console.log('testing')
         position = '-100vw'
+        nav.style.color = 'white'
         break
       case 'COMPOSITION':
         position = '-200vw'
+        nav.style.color = 'black'
+        document.getElementsByClassName('blackStarBackground')[0].classList.add('showStars')
         break
       default:
         break

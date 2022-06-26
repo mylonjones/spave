@@ -1,21 +1,31 @@
 import logo from './images/whiteLogo.png'
-import star from './images/whiteGlowStar.svg'
+import MusicStar from './musicStar'
+
+import sound from './images/ICE CAVE.wav'
+
 
 export default function Production() {
 
   return(
     <div className='production' >
       <div className='whiteStarBackground' >
-        <div className='whiteMusicStars' >
-          <div className='musicStar musicStar1' >
-            <img className='musicStarImage' src={star} alt='musicPlayer' ></img>
-
-          </div>
+        <div className='musicStars' >
+          <MusicStar
+            name={'//ICE CAVE'}
+            sound={sound}
+            number='White1'
+            color='white'
+            />
+          <MusicStar
+            name={'//ICE CAVE'}
+            sound={sound}
+            number='White2'
+            color='white'
+            />
         </div>
-        <div className='whiteLogo' >
+        <div className='pageLogo' >
           <img src={logo} alt='logo' ></img>
         </div>
-
       </div>
     </div>
   )
