@@ -36,7 +36,7 @@ export default function MusicStar(props) {
         if (ref.current && !ref.current.contains(event.target)) {
           setUrl(imports[props.color + 'Star'])
           setPlaying(false)
-          document.getElementById("myAudio").pause()
+          document.getElementById(uniqueClass).pause()
         }
       }
       document.addEventListener("mousedown", handleClickOutside);
@@ -59,11 +59,11 @@ export default function MusicStar(props) {
     if(playing) {
       setUrl(imports[props.color + 'Play'])
       setPlaying(false)
-      document.getElementById("myAudio").pause()
+      document.getElementById(uniqueClass).pause()
     } else {
       setUrl(imports[props.color + 'Pause'])
       setPlaying(true)
-      document.getElementById("myAudio").play()
+      document.getElementById(uniqueClass).play()
     }
   }
 
@@ -96,7 +96,7 @@ export default function MusicStar(props) {
         <div>{props.name}</div>
       </div>)}
 
-      <audio id="myAudio" onTimeUpdate={handleTimeUpdate} >
+      <audio id={uniqueClass} onTimeUpdate={handleTimeUpdate} >
         <source src={props.sound} type="audio/wav"/>
       </audio>
     </div>)

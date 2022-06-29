@@ -1,7 +1,6 @@
 export default function Navigation() {
 
   function handleClick(e) {
-    console.log(e.target.innerHTML)
 
     const pages = document.getElementsByClassName('pages')[0]
 

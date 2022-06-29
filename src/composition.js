@@ -1,27 +1,26 @@
 import logo from './images/blackLogo.png'
 import MusicStar from './musicStar'
 
-import sound from './images/ICE CAVE.wav'
+const url = 'https://res.cloudinary.com/dzgsesdip/video/upload/v1656525394/music/'
 
-
-export default function Composition() {
+export default function Composition(props) {
 
   return(
     <div className='composition' >
       <div className='blackStarBackground' >
         <div className='musicStars' >
-          <MusicStar
-            name={'//ICE CAVE'}
-            sound={sound}
-            number='Black1'
+          {props.songs.map((song, index) => {
+            index = index + 1
+            return (
+              <MusicStar
+            name={'//' + song.name}
+            key={index}
+            sound={url + song.file}
+            number={'Black' + index}
             color='black'
             />
-          <MusicStar
-            name={'//ICE CAVE'}
-            sound={sound}
-            number='Black2'
-            color='black'
-            />
+            )
+          })}
         </div>
         <div className='pageLogo' >
           <img src={logo} alt='logo' ></img>
