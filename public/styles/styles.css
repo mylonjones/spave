@@ -44,6 +44,7 @@ body {
 }
 
 .home .landingStar .homeStar {
+  cursor: pointer;
   width: 150px;
 }
 
@@ -75,6 +76,7 @@ body {
 }
 
 .navbar .smallNav {
+  cursor: pointer;
   font-size: 30px;
   line-height: 130px;
   height: 130px;
@@ -89,12 +91,17 @@ body {
   letter-spacing: .8px;
 }
 
+.navbar .smallNav .active {
+  letter-spacing: .8px;
+}
+
 .navbar .smallNav .text {
   top: -100%;
   position: relative;
 }
 
 .navbar .bigNav {
+  cursor: pointer;
   font-size: 94px;
   height: 118px;
   width: 420px;
@@ -105,6 +112,10 @@ body {
 }
 
 .navbar .bigNav:hover .shadow {
+  letter-spacing: 1.5px;
+}
+
+.navbar .bigNav .active {
   letter-spacing: 1.5px;
 }
 
@@ -156,7 +167,7 @@ body {
 }
 
 .musicStars .musicStar .musicStarImage {
-  width: 65px;
+  width: 55px;
 }
 
 .musicStars .musicStar .progressBar {
@@ -187,7 +198,42 @@ body {
 
 .musicStarWhite2 {
   top: 14vh;
-  left: 30vw;
+  left: 72vw;
+}
+
+.musicStarWhite3 {
+  top: 42vh;
+  left: 24vw;
+}
+
+.musicStarWhite4 {
+  top: 74vh;
+  left: 73vw;
+}
+
+.musicStarWhite5 {
+  top: 31vh;
+  left: 84vw;
+}
+
+.musicStarWhite6 {
+  top: 79vh;
+  left: 9vw;
+}
+
+.musicStarWhite7 {
+  top: 46vh;
+  left: 70vw;
+}
+
+.musicStarWhite8 {
+  top: 70vh;
+  left: 37vw;
+}
+
+.musicStarWhite9 {
+  top: 19vh;
+  left: 43vw;
 }
 
 .musicStarBlack1 {
@@ -197,7 +243,42 @@ body {
 
 .musicStarBlack2 {
   top: 14vh;
-  left: 230vw;
+  left: 272vw;
+}
+
+.musicStarBlack3 {
+  top: 42vh;
+  left: 224vw;
+}
+
+.musicStarBlack4 {
+  top: 74vh;
+  left: 273vw;
+}
+
+.musicStarBlack5 {
+  top: 31vh;
+  left: 284vw;
+}
+
+.musicStarBlack6 {
+  top: 79vh;
+  left: 209vw;
+}
+
+.musicStarBlack7 {
+  top: 46vh;
+  left: 270vw;
+}
+
+.musicStarBlack8 {
+  top: 70vh;
+  left: 237vw;
+}
+
+.musicStarBlack9 {
+  top: 19vh;
+  left: 243vw;
 }
 
 .composition {
@@ -222,4 +303,4 @@ body {
 .composition .showStars {
   opacity: 1;
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=styles.css.map */

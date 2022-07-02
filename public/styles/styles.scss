@@ -42,6 +42,7 @@ body {
     margin-top: -50px;
     width: fit-content;
     .homeStar {
+      cursor: pointer;
       width: 150px;
     }
   }
@@ -65,6 +66,7 @@ body {
   text-align: center;
 
   .smallNav {
+    cursor: pointer;
     font-size: 30px;
     line-height: 130px;
     height: 130px;
@@ -79,6 +81,10 @@ body {
       letter-spacing: .8px;
     }
 
+    .active {
+      letter-spacing: .8px;
+    }
+
     .text {
       top: -100%;
       position: relative;
@@ -86,6 +92,7 @@ body {
   }
 
   .bigNav {
+    cursor: pointer;
     font-size: 94px;
     height: 118px;
     width: 420px;
@@ -94,6 +101,10 @@ body {
     }
 
     &:hover .shadow {
+      letter-spacing: 1.5px;
+    }
+
+    .active {
       letter-spacing: 1.5px;
     }
 
