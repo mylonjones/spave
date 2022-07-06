@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react'
 
 function App() {
 
-  const [songs, setSongs] = useState([])
+  const [songs, setSongs] = useState({composition: [], production: []})
 
   useEffect(() => {
     // let data = [{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"}]
@@ -24,9 +24,9 @@ function App() {
     <div className="app">
       <Navigation />
       <div className='pages'>
-        <Production songs={songs} />
+        <Production songs={songs.production} />
         <Home/>
-        <Composition songs={songs} />
+        <Composition songs={songs.composition} />
       </div>
     </div>
   );

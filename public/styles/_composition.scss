@@ -10,7 +10,9 @@
   .blackStarBackground {
     width: 100%;
     height: 100%;
-    background-image: url("images/blackBackgroundStars.png"), url("images/blackConst.png");
+    background-size: contain;
+    background-position: center;
+    background-image: url("images/blackBackgroundStars.png"), url("images/blackConst.png"), radial-gradient(circle, #B5BADC 0%, white 100%);
     opacity: 0;
     transition: opacity 2s linear;
 

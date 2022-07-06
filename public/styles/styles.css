@@ -14,7 +14,8 @@ body {
 }
 
 .home {
-  background: linear-gradient(270.8deg, white 0%, #2e3143 50%, black 100%);
+  background: -webkit-gradient(linear, right top, left top, color-stop(1%, white), color-stop(55%, #7E7F9A), to(black));
+  background: linear-gradient(270deg, white 1%, #7E7F9A 55%, black 100%);
   height: 100%;
   width: 100vw;
   height: 100vh;
@@ -30,8 +31,7 @@ body {
   width: 15rem;
   height: 15rem;
   margin: auto;
-  padding-left: 50px;
-  text-align: left;
+  text-align: center;
 }
 
 .home .landingStar {
@@ -43,9 +43,31 @@ body {
   width: fit-content;
 }
 
+.home .landingStar .homeStarContainer {
+  width: 80px;
+  height: 80px;
+}
+
+.home .landingStar .homeStarContainer .starGlow {
+  background-size: 140%;
+  background-position: center;
+  background-image: url("images/C3B131ED.png");
+  opacity: 0;
+  -webkit-transition: opacity .5s linear;
+  transition: opacity .5s linear;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: -80px;
+}
+
+.home .landingStar .homeStarContainer .starGlow:hover {
+  opacity: 1;
+}
+
 .home .landingStar .homeStar {
+  height: 80px;
   cursor: pointer;
-  width: 150px;
 }
 
 .pages {
@@ -84,6 +106,8 @@ body {
 }
 
 .navbar .smallNav .shadow {
+  -webkit-transition: letter-spacing 1s linear;
+  transition: letter-spacing 1s linear;
   color: #b7b7b7;
 }
 
@@ -108,6 +132,8 @@ body {
 }
 
 .navbar .bigNav .shadow {
+  -webkit-transition: letter-spacing 1s linear;
+  transition: letter-spacing 1s linear;
   color: #b7b7b7;
 }
 
@@ -137,7 +163,9 @@ body {
 .production .whiteStarBackground {
   width: 100%;
   height: 100%;
-  background-image: url("images/whiteBackgroundStars.png"), url("images/whiteConst.png");
+  background-size: contain;
+  background-position: center;
+  background-image: url("images/whiteBackgroundStars.png"), url("images/whiteConst.png"), radial-gradient(circle, #2E3143 0%, black 100%);
   opacity: 0;
   -webkit-transition: opacity 2s linear;
   transition: opacity 2s linear;
@@ -166,29 +194,56 @@ body {
   position: absolute;
 }
 
-.musicStars .musicStar .musicStarImage {
-  width: 55px;
+.musicStars .musicStar .glowContainer {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+}
+
+.musicStars .musicStar .glowContainer .musicStarImage {
+  height: 45px;
+}
+
+.musicStars .musicStar .glowContainer .starGlow {
+  background-position: center;
+  position: relative;
+  background-size: 130%;
+  width: 137%;
+  height: 137%;
+  top: -56px;
+  left: -9px;
 }
 
 .musicStars .musicStar .progressBar {
-  width: 150px;
+  display: inline-block;
+  width: 120px;
 }
 
-.musicStars .musicStar .progressBar .progressPotential {
-  border: 4px solid gray;
-  border-radius: 4px;
+.musicStars .musicStar .progressBar .progressMarker {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  border: 10px solid white;
   position: relative;
-  width: 100%;
+  top: -9.75px;
+  left: -9px;
 }
 
 .musicStars .musicStar .progressBar .progress {
+  width: 100%;
+  height: 0px;
   -webkit-transition: width linear;
   transition: width linear;
   border: 4px solid #f3f1f5;
   border-radius: 4px;
-  width: 1%;
   position: relative;
-  top: -8px;
+  top: -2px;
+}
+
+.musicStars .musicStar .progressBar .title {
+  top: 10px;
+  position: relative;
 }
 
 .musicStarWhite1 {
@@ -294,7 +349,9 @@ body {
 .composition .blackStarBackground {
   width: 100%;
   height: 100%;
-  background-image: url("images/blackBackgroundStars.png"), url("images/blackConst.png");
+  background-size: contain;
+  background-position: center;
+  background-image: url("images/blackBackgroundStars.png"), url("images/blackConst.png"), radial-gradient(circle, #B5BADC 0%, white 100%);
   opacity: 0;
   -webkit-transition: opacity 2s linear;
   transition: opacity 2s linear;

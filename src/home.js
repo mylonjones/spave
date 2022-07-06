@@ -43,7 +43,7 @@ export default function Home() {
     setUrl(star)
   }
 
-  function handleStarClick() {
+  function handleStarClick(e) {
     setInfoContent(info)
   }
 
@@ -72,6 +72,9 @@ export default function Home() {
       onMouseEnter={handleStarHover}
       onMouseLeave={handleStarOut}
       onClick={handleStarClick}
-    >{infoContent || <img className='homeStar' src={url} alt='star'></img>}</div>
+    >{(infoContent && <div style={{paddingTop: '10px'} }>{infoContent}</div>) ||<div className='homeStarContainer'>
+        <img className='homeStar' src={url} alt='star'></img>
+        <div className='starGlow' ></div>
+      </div>}</div>
   </div>)
 }

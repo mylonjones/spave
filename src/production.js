@@ -1,7 +1,7 @@
 import logo from './images/whiteLogo.png'
 import MusicStar from './musicStar'
 
-const url = 'https://res.cloudinary.com/dzgsesdip/video/upload/v1656525394/music/'
+const url = 'https://res.cloudinary.com/dzgsesdip/video/upload/v1656525394/production/'
 
 
 export default function Production(props) {

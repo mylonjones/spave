@@ -1,0 +1,7 @@
+dark blue to mix with black 2E3143
+light blue to mix with white B5BADC
+7E7F9A
+
+2E3143 prod page
+#B5BADC comp page
+#7E7F9A home page

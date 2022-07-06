@@ -1,10 +1,13 @@
 import whiteStar from './images/whiteGlowStar.svg'
 import whitePlay from './images/playWhite.svg'
 import whitePause from './images/pauseWhite.svg'
+import whiteGlow from './images/C3B131ED.png'
+
 
 import blackStar from './images/blackGlowStar.svg'
 import blackPlay from './images/playBlack.svg'
 import blackPause from './images/pauseBlack.svg'
+import blackGlow from './images/D7887273.png'
 
 
 import { useState, useRef, useEffect } from 'react'
@@ -14,9 +17,11 @@ const imports = {
   whiteStar,
   whitePlay,
   whitePause,
+  whiteGlow,
   blackStar,
   blackPlay,
-  blackPause
+  blackPause,
+  blackGlow
 }
 
 
@@ -75,8 +80,8 @@ export default function MusicStar(props) {
       setPlaying(false)
       setUrl(imports[props.color + 'Play'])
     }
-    var progress = document.getElementsByClassName('progress')[0]
-    progress.style.width = (currentTime +.25)/duration*100+'%'
+    var progress = document.getElementsByClassName('progressMarker')[0]
+    progress.style.left = (currentTime +.25)/duration*120-9+'px'
 
   }
 
@@ -87,13 +92,16 @@ export default function MusicStar(props) {
     onMouseLeave={handleStarOut}
     onClick={handleStarClick}
     >
-      <img className='musicStarImage' src={url} alt='musicPlayer' ></img>
+      <div className='glowContainer' >
+        <img className='musicStarImage' src={url} alt='musicPlayer' ></img>
+        <div className='starGlow' style={{ backgroundImage: `url(${imports[props.color + 'Glow']})` }} ></div>
+      </div>
       {url !== imports[props.color + 'Star'] && (<div className='progressBar' >
-        <div className='progressPotential' >
-        </div>
         <div className='progress' >
+          <div className='progressMarker' >
+          </div>
         </div>
-        <div>{props.name}</div>
+        <div className='title' >{props.name}</div>
       </div>)}
 
       <audio id={uniqueClass + props.name} onTimeUpdate={handleTimeUpdate} >

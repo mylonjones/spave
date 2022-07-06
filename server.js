@@ -10,9 +10,18 @@ cloudinary.config({
   api_secret: 'TNoxdXrtdBnBbLOVhHEdeI2IdXc'
 });
 
-app.get('/files', (req, res) => {
-  cloudinary.v2.search
-    .expression('folder:music/*')
+// cloudinary.config({
+//   cloud_name: 'djsqhh5qc',
+//   api_key: '838511694775939',
+//   api_secret: 'hGzoVk5vVrfbNOfxh0bJf3uAji8'
+// });
+
+app.get('/files', async (req, res) => {
+
+  let data = {}
+
+  await cloudinary.v2.search
+    .expression('folder:production/*')
     .sort_by('public_id','desc')
     .max_results(30)
     .execute()
@@ -24,8 +33,27 @@ app.get('/files', (req, res) => {
         let file = song.filename + '.wav'
         return {name, file}
       })
-      res.send(result)
+      data.production = result
     })
+
+  await cloudinary.v2.search
+    .expression('folder:composition/*')
+    .sort_by('public_id','desc')
+    .max_results(30)
+    .execute()
+    .then(result => {
+      result = result.resources.map(song => {
+
+        let name = song.filename.slice(0, song.filename.length - 7)
+        name = name.replace('_', ' ')
+        let file = song.filename + '.wav'
+        return {name, file}
+      })
+      data.composition = result
+    })
+
+    res.send(data)
+
 })
 
 app.listen(port, () => {

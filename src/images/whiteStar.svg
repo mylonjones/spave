@@ -1,9 +1,17 @@
-<svg width="700" height="900" xmlns="http://www.w3.org/2000/svg" version="1.1" xml:space="preserve">
+<svg width="600" height="700" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" version="1.1">
+
  <g>
   <title>Layer 1</title>
-  <g id="Layer_1" class="st0">
-   <polygon class="st1" points="603.4000244140625,392.20001220703125 420.199951171875,462.4000244140625 350,761.2000122070312 279.79998779296875,462.4000244140625 96.5999755859375,392.20001220703125 279.79998779296875,322 350,138.79998779296875 420.199951171875,322 " display="inline" fill="#ffffff" id="svg_1"/>
+  <g id="Layer_1">
+   <polygon id="svg_1" fill="#FFFFFF" points="553.4000244140625,292.20001220703125 370.199951171875,362.4000244140625 300,661.2000122070312 229.79998779296875,362.4000244140625 46.5999755859375,292.20001220703125 229.79998779296875,222 300,38.79998779296875 370.199951171875,222 " class="st0"/>
+  </g>
+  <g display="none" class="st1" id="Layer_2">
+   <g id="svg_2" display="inline" class="st2">
+    <image id="svg_3" transform="matrix(1 0 0 1 278 -204)" xlink:href="50C9BB4.png" height="1488" width="1372"/>
+    <g id="svg_4">
+     <polygon id="svg_5" fill="#FFFFFF" points="1217.4,482.2 1034.2,552.4 964,851.2 893.8,552.4 710.6,482.2 893.8,412 964,228.8 1034.2,412         " class="st0"/>
+    </g>
+   </g>
   </g>
  </g>
-
 </svg>
