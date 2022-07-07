@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 4000
+const path = require('path');
 
 const cloudinary = require('cloudinary')
 
@@ -15,6 +16,9 @@ cloudinary.config({
 //   api_key: '838511694775939',
 //   api_secret: 'hGzoVk5vVrfbNOfxh0bJf3uAji8'
 // });
+
+
+app.use(express.static(path.join(__dirname, '/build')));
 
 app.get('/files', async (req, res) => {
 
@@ -56,6 +60,7 @@ app.get('/files', async (req, res) => {
 
 
 })
+
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}`)
