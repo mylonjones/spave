@@ -22,7 +22,6 @@ app.get('/files', async (req, res) => {
 
   await cloudinary.v2.search
     .expression('folder:production/*')
-    .sort_by('public_id','desc')
     .max_results(30)
     .execute()
     .then(result => {
@@ -53,6 +52,8 @@ app.get('/files', async (req, res) => {
     })
 
     res.send(data)
+
+
 
 })
 

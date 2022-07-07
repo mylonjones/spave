@@ -12,9 +12,16 @@
     height: 100%;
     background-size: contain;
     background-position: center;
-    background-image: url("images/whiteBackgroundStars.png"), url("images/whiteConst.png"), radial-gradient(circle, #2E3143 0%, black 100%);
+    background-image: url("images/whiteConst.png"), radial-gradient(circle, #2E3143 0%, black 100%);
     opacity: 0;
     transition: opacity 2s linear;
+    .parallaxBackground {
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-position: center;
+      background-image: url("images/whiteBackgroundStars.png");
+    }
   }
   .showStars {
     opacity: 1;
@@ -80,92 +87,116 @@
   }
 }
 
+.logo {
+  width: 240px;
+}
+
 .musicStarWhite1 {
-  top: 20vh;
-  left: 10vw;
+  top: 41vh;
+  left: 7vw;
 }
 
 .musicStarWhite2 {
-  top: 14vh;
-  left: 72vw;
+  top: 16vh;
+  left: 55vw;
 }
 
 .musicStarWhite3 {
-  top: 42vh;
-  left: 24vw;
+  top: 48vh;
+  left: 29vw;
 }
 
 .musicStarWhite4 {
-  top: 74vh;
-  left: 73vw;
+  top: 76vh;
+  left: 78vw;
 }
 
 .musicStarWhite5 {
-  top: 31vh;
-  left: 84vw;
+  top: 36vh;
+  left: 76vw;
 }
 
 .musicStarWhite6 {
-  top: 79vh;
-  left: 9vw;
+  top: 75vh;
+  left: 22vw;
 }
 
 .musicStarWhite7 {
-  top: 46vh;
-  left: 70vw;
+  top: 38vh;
+  left: 61vw;
 }
 
 .musicStarWhite8 {
-  top: 70vh;
-  left: 37vw
+  top: 83vh;
+  left: 53vw;
 }
 
 .musicStarWhite9 {
-  top: 19vh;
-  left: 43vw;
+  top: 22vh;
+  left: 24vw;
 }
 
 .musicStarBlack1 {
   top: 20vh;
-  left: 210vw;
+  left: 214vw;
 }
 
 .musicStarBlack2 {
   top: 14vh;
-  left: 272vw;
+  left: 289vw;
 }
 
 .musicStarBlack3 {
-  top: 42vh;
-  left: 224vw;
+  top: 48vh;
+  left: 218vw;
 }
 
 .musicStarBlack4 {
-  top: 74vh;
-  left: 273vw;
+  top: 79vh;
+  left: 263vw;
 }
 
 .musicStarBlack5 {
-  top: 31vh;
-  left: 284vw;
+  top: 52vh;
+  left: 281vw;
 }
 
 .musicStarBlack6 {
-  top: 79vh;
-  left: 209vw;
+  top: 84vh;
+  left: 214vw;
 }
 
 .musicStarBlack7 {
   top: 46vh;
-  left: 270vw;
+  left: 263vw;
 }
 
 .musicStarBlack8 {
-  top: 70vh;
-  left: 237vw
+  top: 65vh;
+  left: 256vw;
 }
 
 .musicStarBlack9 {
+  top: 27vh;
+  left: 235vw;
+}
+
+.musicStarBlack10 {
   top: 19vh;
-  left: 243vw;
+  left: 265vw;
+}
+
+.musicStarBlack11 {
+  top: 90vh;
+  left: 274vw;
+}
+
+.musicStarBlack12 {
+  top: 57vh;
+  left: 203vw;
+}
+
+.musicStarBlack13 {
+  top: 65vh;
+  left: 227vw;
 }
