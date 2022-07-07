@@ -1,0 +1,446 @@
+@font-face {
+  font-family: trender;
+  src: url(./Trender.ttf);
+}
+
+body {
+  font-family: trender;
+  margin: 0;
+}
+
+.app {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.home {
+  background: -webkit-gradient(linear, right top, left top, color-stop(1%, white), color-stop(55%, #7E7F9A), to(black));
+  background: linear-gradient(270deg, white 1%, #7E7F9A 55%, black 100%);
+  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  display: inline-block;
+  color: white;
+  font-size: 26px;
+  white-space: pre-wrap;
+  vertical-align: top;
+}
+
+.home .questionContainer {
+  padding-top: 350px;
+  width: 15rem;
+  height: 15rem;
+  margin: auto;
+  text-align: center;
+}
+
+.home .landingStar {
+  text-align: center;
+  margin: auto;
+  margin-top: -50px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.home .landingStar .homeStarContainer {
+  width: 80px;
+  height: 80px;
+}
+
+.home .landingStar .homeStarContainer .starGlow {
+  background-size: 140%;
+  background-position: center;
+  background-image: url("images/C3B131ED.png");
+  opacity: 0;
+  -webkit-transition: opacity .5s linear;
+  transition: opacity .5s linear;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: -80px;
+}
+
+.home .landingStar .homeStarContainer .starGlow:hover {
+  opacity: 1;
+}
+
+.home .landingStar .homeStar {
+  height: 80px;
+  cursor: pointer;
+}
+
+.pages {
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  white-space: nowrap;
+  -webkit-transform: translateX(-100vw);
+          transform: translateX(-100vw);
+}
+
+.production {
+  width: 100vw;
+  height: 100vh;
+  display: inline-block;
+  background-color: black;
+  vertical-align: top;
+  background-size: 100%;
+  color: white;
+}
+
+.production .whiteStarBackground {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-image: url("images/whiteConst.png"), radial-gradient(circle, #2E3143 0%, black 100%);
+  opacity: 0;
+  -webkit-transition: opacity 2s linear;
+  transition: opacity 2s linear;
+}
+
+.production .whiteStarBackground .parallaxBackground {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-image: url("images/whiteBackgroundStars.png");
+}
+
+.production .whiteStarBackground .parallaxBackground .pageLogo {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  padding-top: 32vh;
+}
+
+.production .whiteStarBackground .parallaxBackground .pageLogo .logo {
+  width: 230px;
+}
+
+.production .whiteStarBackground .parallaxBackground .progressBar {
+  display: inline-block;
+  width: 120px;
+}
+
+.production .whiteStarBackground .parallaxBackground .progressBar .progressMarker {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  border: 10px solid white;
+  position: relative;
+  top: -9.75px;
+  left: -9px;
+}
+
+.production .whiteStarBackground .parallaxBackground .progressBar .progress {
+  width: 100%;
+  height: 0px;
+  -webkit-transition: width linear;
+  transition: width linear;
+  border: 4px solid white;
+  border-radius: 4px;
+  position: relative;
+  top: -2px;
+}
+
+.production .whiteStarBackground .parallaxBackground .progressBar .title {
+  top: 10px;
+  position: relative;
+}
+
+.production .showStars {
+  opacity: 1;
+}
+
+.musicStars {
+  height: 0;
+}
+
+.musicStars .musicStar {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+}
+
+.musicStars .musicStar .glowContainer {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+}
+
+.musicStars .musicStar .glowContainer .musicStarImage {
+  height: 45px;
+}
+
+.musicStars .musicStar .glowContainer .starGlow {
+  background-position: center;
+  position: relative;
+  background-size: 130%;
+  width: 137%;
+  height: 137%;
+  top: -56px;
+  left: -9px;
+}
+
+.musicStarWhite1 {
+  top: 41vh;
+  left: 7vw;
+}
+
+.musicStarWhite2 {
+  top: 16vh;
+  left: 55vw;
+}
+
+.musicStarWhite3 {
+  top: 48vh;
+  left: 29vw;
+}
+
+.musicStarWhite4 {
+  top: 76vh;
+  left: 78vw;
+}
+
+.musicStarWhite5 {
+  top: 36vh;
+  left: 76vw;
+}
+
+.musicStarWhite6 {
+  top: 75vh;
+  left: 22vw;
+}
+
+.musicStarWhite7 {
+  top: 38vh;
+  left: 61vw;
+}
+
+.musicStarWhite8 {
+  top: 83vh;
+  left: 53vw;
+}
+
+.musicStarWhite9 {
+  top: 22vh;
+  left: 24vw;
+}
+
+.composition {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  display: inline-block;
+  vertical-align: top;
+  background-size: 100%;
+  color: black;
+}
+
+.composition .blackStarBackground {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-image: url("images/blackConst.png"), radial-gradient(circle, #B5BADC 0%, white 100%);
+  opacity: 0;
+  -webkit-transition: opacity 2s linear;
+  transition: opacity 2s linear;
+}
+
+.composition .blackStarBackground .parallaxBackground {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-image: url("images/blackBackgroundStars.png");
+}
+
+.composition .blackStarBackground .parallaxBackground .pageLogo {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  padding-top: 32vh;
+}
+
+.composition .blackStarBackground .parallaxBackground .pageLogo .logo {
+  width: 240px;
+}
+
+.composition .blackStarBackground .parallaxBackground .progressBar {
+  display: inline-block;
+  width: 120px;
+}
+
+.composition .blackStarBackground .parallaxBackground .progressBar .progressMarker {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  border: 10px solid black;
+  position: relative;
+  top: -9.75px;
+  left: -9px;
+}
+
+.composition .blackStarBackground .parallaxBackground .progressBar .progress {
+  width: 100%;
+  height: 0px;
+  -webkit-transition: width linear;
+  transition: width linear;
+  border: 4px solid black;
+  border-radius: 4px;
+  position: relative;
+  top: -2px;
+}
+
+.composition .blackStarBackground .parallaxBackground .progressBar .title {
+  top: 10px;
+  position: relative;
+}
+
+.composition .showStars {
+  opacity: 1;
+}
+
+.musicStarBlack1 {
+  top: 20vh;
+  left: 214vw;
+}
+
+.musicStarBlack2 {
+  top: 14vh;
+  left: 289vw;
+}
+
+.musicStarBlack3 {
+  top: 48vh;
+  left: 218vw;
+}
+
+.musicStarBlack4 {
+  top: 79vh;
+  left: 263vw;
+}
+
+.musicStarBlack5 {
+  top: 52vh;
+  left: 281vw;
+}
+
+.musicStarBlack6 {
+  top: 84vh;
+  left: 214vw;
+}
+
+.musicStarBlack7 {
+  top: 46vh;
+  left: 263vw;
+}
+
+.musicStarBlack8 {
+  top: 65vh;
+  left: 256vw;
+}
+
+.musicStarBlack9 {
+  top: 27vh;
+  left: 235vw;
+}
+
+.musicStarBlack10 {
+  top: 19vh;
+  left: 265vw;
+}
+
+.musicStarBlack11 {
+  top: 90vh;
+  left: 274vw;
+}
+
+.musicStarBlack12 {
+  top: 57vh;
+  left: 203vw;
+}
+
+.musicStarBlack13 {
+  top: 65vh;
+  left: 227vw;
+}
+
+.navbar {
+  -webkit-transition: color 1s;
+  transition: color 1s;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  color: white;
+  gap: 65px;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.navbar .smallNav {
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 130px;
+  height: 130px;
+  width: 212px;
+}
+
+.navbar .smallNav .shadow {
+  -webkit-transition: letter-spacing 1s linear;
+  transition: letter-spacing 1s linear;
+  color: #b7b7b7;
+}
+
+.navbar .smallNav:hover .shadow {
+  letter-spacing: .8px;
+}
+
+.navbar .smallNav .active {
+  letter-spacing: .8px;
+}
+
+.navbar .smallNav .text {
+  top: -100%;
+  position: relative;
+}
+
+.navbar .bigNav {
+  cursor: pointer;
+  font-size: 94px;
+  height: 118px;
+  width: 420px;
+}
+
+.navbar .bigNav .shadow {
+  -webkit-transition: letter-spacing 1s linear;
+  transition: letter-spacing 1s linear;
+  color: #b7b7b7;
+}
+
+.navbar .bigNav:hover .shadow {
+  letter-spacing: 1.5px;
+}
+
+.navbar .bigNav .active {
+  letter-spacing: 1.5px;
+}
+
+.navbar .bigNav .text {
+  top: -118px;
+  position: relative;
+}
+/*# sourceMappingURL=styles.css.map */

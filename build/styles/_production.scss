@@ -1,0 +1,138 @@
+
+.production {
+  width: 100vw;
+  height: 100vh;
+  display: inline-block;
+  background-color: black;
+  vertical-align: top;
+  background-size: 100%;
+  color: white;
+  .whiteStarBackground {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-image: url("images/whiteConst.png"), radial-gradient(circle, #2E3143 0%, black 100%);
+    opacity: 0;
+    transition: opacity 2s linear;
+    .parallaxBackground {
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-position: center;
+      background-image: url("images/whiteBackgroundStars.png");
+      .pageLogo {
+        width: fit-content;
+        margin: auto;
+        padding-top: 32vh;
+        .logo {
+          width: 230px;
+        }
+      }
+      .progressBar {
+        display: inline-block;
+        width: 120px;
+        .progressMarker {
+          width: 0;
+          height: 0;
+          border-radius: 50%;
+          border: 10px solid white;
+          position: relative;
+          top: -9.75px;
+          left: -9px
+        }
+        .progress {
+          width: 100%;
+          height: 0px;
+          transition: width linear;
+          border: 4px solid white;
+          border-radius: 4px;
+          position: relative;
+          top: -2px;
+        }
+        .title {
+          top: 10px;
+          position: relative;
+        }
+      }
+    }
+  }
+  .showStars {
+    opacity: 1;
+  }
+}
+
+
+.musicStars {
+  height: 0;
+  .musicStar {
+    width: fit-content;
+    position: absolute;
+    .glowContainer {
+      display:inline-block;
+      width: 45px;
+      height: 45px;
+      text-align: center;
+      .musicStarImage {
+        height: 45px;
+      }
+      .starGlow {
+        background-position: center;
+        position: relative;
+        background-size: 130%;
+        width: 137%;
+        height: 137%;
+        top: -56px;
+        left: -9px;
+      }
+
+    }
+
+  }
+}
+
+
+.musicStarWhite1 {
+  top: 41vh;
+  left: 7vw;
+}
+
+.musicStarWhite2 {
+  top: 16vh;
+  left: 55vw;
+}
+
+.musicStarWhite3 {
+  top: 48vh;
+  left: 29vw;
+}
+
+.musicStarWhite4 {
+  top: 76vh;
+  left: 78vw;
+}
+
+.musicStarWhite5 {
+  top: 36vh;
+  left: 76vw;
+}
+
+.musicStarWhite6 {
+  top: 75vh;
+  left: 22vw;
+}
+
+.musicStarWhite7 {
+  top: 38vh;
+  left: 61vw;
+}
+
+.musicStarWhite8 {
+  top: 83vh;
+  left: 53vw;
+}
+
+.musicStarWhite9 {
+  top: 22vh;
+  left: 24vw;
+}
