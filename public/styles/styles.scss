@@ -1,6 +1,4 @@
 
-
-
 @font-face {
   font-family: trender;
   src: url(./Trender.ttf);
@@ -74,68 +72,6 @@ body {
   transform: translateX(-100vw)
 }
 
-.navbar {
-  transition: color 1s;
-  z-index: 1;
-  display: flex;
-  position: absolute;
-  color: white;
-  gap: 65px;
-  width: 100%;
-  justify-content: center;
-  text-align: center;
-
-  .smallNav {
-    cursor: pointer;
-    font-size: 30px;
-    line-height: 130px;
-    height: 130px;
-
-    width: 212px;
-
-    .shadow {
-      transition: letter-spacing 1s linear;
-      color: #b7b7b7;
-    }
-
-    &:hover .shadow {
-      letter-spacing: .8px;
-    }
-
-    .active {
-      letter-spacing: .8px;
-    }
-
-    .text {
-      top: -100%;
-      position: relative;
-    }
-  }
-
-  .bigNav {
-    cursor: pointer;
-    font-size: 94px;
-    height: 118px;
-    width: 420px;
-    .shadow {
-      transition: letter-spacing 1s linear;
-      color: #b7b7b7;
-    }
-
-    &:hover .shadow {
-      letter-spacing: 1.5px;
-    }
-
-    .active {
-      letter-spacing: 1.5px;
-    }
-
-    .text {
-      top: -118px;
-      position: relative;
-    }
-  }
-}
-
-@import './production.scss';
-@import './composition.scss';
+@import './production';
+@import './composition';
+@import './navigation';

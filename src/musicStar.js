@@ -33,6 +33,7 @@ export default function MusicStar(props) {
 
   let [url, setUrl] = useState(imports[props.color + 'Star'])
   let [playing, setPlaying] = useState(false)
+  let [showProgress, setShowProgress] = useState('none')
   const uniqueClass = 'musicStar' + props.number
 
   function useOutsideAlerter(ref) {
@@ -41,6 +42,7 @@ export default function MusicStar(props) {
         if (ref.current && !ref.current.contains(event.target)) {
           setUrl(imports[props.color + 'Star'])
           setPlaying(false)
+          setShowProgress('none')
           document.getElementById(uniqueClass + props.name).pause()
         }
       }
@@ -57,6 +59,7 @@ export default function MusicStar(props) {
   }
 
   function handleStarOut() {
+    !playing && setShowProgress('none')
     !playing && setUrl(imports[props.color + 'Star'])
   }
 
@@ -67,6 +70,7 @@ export default function MusicStar(props) {
       document.getElementById(uniqueClass + props.name).pause()
     } else {
       setUrl(imports[props.color + 'Pause'])
+      setShowProgress('block')
       setPlaying(true)
       document.getElementById(uniqueClass + props.name).play()
     }
@@ -97,7 +101,7 @@ export default function MusicStar(props) {
         <div className='starGlow' style={{ backgroundImage: `url(${imports[props.color + 'Glow']})` }} ></div>
       </div>
       {url !== imports[props.color + 'Star'] && (<div className='progressBar' >
-        <div className='progress' >
+        <div className='progress' style={{display: showProgress}}>
           <div className='progressMarker' >
           </div>
         </div>
