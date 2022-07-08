@@ -14,6 +14,10 @@ body {
   overflow-x: hidden;
 }
 
+.answer {
+  transition: opacity 1s linear;
+}
+
 .home {
   background: linear-gradient(270deg, white 1%, #7E7F9A 55%, black 100%);
   height: 100%;
@@ -24,6 +28,7 @@ body {
   font-size: 26px;
   white-space: pre-wrap;
   vertical-align: top;
+
 
   .questionContainer {
     padding-top: 350px;

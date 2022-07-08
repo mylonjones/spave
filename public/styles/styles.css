@@ -13,6 +13,11 @@ body {
   overflow-x: hidden;
 }
 
+.answer {
+  -webkit-transition: opacity 1s linear;
+  transition: opacity 1s linear;
+}
+
 .home {
   background: -webkit-gradient(linear, right top, left top, color-stop(1%, white), color-stop(55%, #7E7F9A), to(black));
   background: linear-gradient(270deg, white 1%, #7E7F9A 55%, black 100%);

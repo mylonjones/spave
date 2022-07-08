@@ -5,17 +5,17 @@ const path = require('path');
 
 const cloudinary = require('cloudinary')
 
-cloudinary.config({
-  cloud_name: 'dzgsesdip',
-  api_key: '234844499111316',
-  api_secret: 'TNoxdXrtdBnBbLOVhHEdeI2IdXc'
-});
-
 // cloudinary.config({
-//   cloud_name: 'djsqhh5qc',
-//   api_key: '838511694775939',
-//   api_secret: 'hGzoVk5vVrfbNOfxh0bJf3uAji8'
+//   cloud_name: 'dzgsesdip',
+//   api_key: '234844499111316',
+//   api_secret: 'TNoxdXrtdBnBbLOVhHEdeI2IdXc'
 // });
+
+cloudinary.config({
+  cloud_name: 'djsqhh5qc',
+  api_key: '838511694775939',
+  api_secret: 'hGzoVk5vVrfbNOfxh0bJf3uAji8'
+});
 
 
 app.use(express.static(path.join(__dirname, '/build')));
@@ -25,7 +25,7 @@ app.get('/files', async (req, res) => {
   let data = {}
 
   await cloudinary.v2.search
-    .expression('folder:production/*')
+    .expression('folder:PRODUCTION/*')
     .max_results(30)
     .execute()
     .then(result => {
@@ -40,7 +40,7 @@ app.get('/files', async (req, res) => {
     })
 
   await cloudinary.v2.search
-    .expression('folder:composition/*')
+    .expression('folder:COMPOSITION/*')
     .sort_by('public_id','desc')
     .max_results(30)
     .execute()

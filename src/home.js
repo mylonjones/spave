@@ -9,7 +9,7 @@ export default function Home() {
 
   let [url, setUrl] = useState(star)
 
-  let [answer, setAnswer] = useState('')
+  let [showAnswer, setShowAnswer] = useState(0)
 
   let [infoContent, setInfoContent] = useState(null)
 
@@ -48,11 +48,11 @@ export default function Home() {
   }
 
   function handleQuestionHover(e) {
-    setAnswer(intro)
+    setShowAnswer(1)
   }
 
   function handleQuestionOut(e) {
-    setAnswer('')
+    setShowAnswer(0)
   }
 
 
@@ -63,7 +63,10 @@ export default function Home() {
         onMouseEnter={handleQuestionHover}
         onMouseLeave={handleQuestionOut}
       >
-        {`//WHO AM I?${answer}`}
+        {`//WHO AM I?`}
+        <span className='answer' style={{opacity: showAnswer}} >
+          {intro}
+        </span>
       </div>
     </div>
     <div
