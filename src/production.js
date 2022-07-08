@@ -7,6 +7,13 @@ const url = 'https://res.cloudinary.com/dzgsesdip/video/upload/v1656525394/produ
 
 export default function Production(props) {
 
+  let songs = []
+  let songLimit = 9
+
+  for(let i = 1; i <= songLimit; i++) {
+    let index = props.songs.length - i
+    if(index >= 0) songs.unshift(props.songs[index])
+  }
 
 
   return(
@@ -14,7 +21,7 @@ export default function Production(props) {
       <div className='whiteStarBackground' >
         <div className='parallaxBackground' >
           <div className='musicStars' >
-          {props.songs.map((song, index) => {
+          {songs.map((song, index) => {
               index = index + 1
               return (
                 <MusicStar

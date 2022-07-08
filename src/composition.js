@@ -7,12 +7,20 @@ const url = 'https://res.cloudinary.com/dzgsesdip/video/upload/v1656525394/compo
 
 export default function Composition(props) {
 
+  let songs = []
+  let songLimit = 13
+
+  for(let i = 1; i <= songLimit; i++) {
+    let index = props.songs.length - i
+    if(index >= 0) songs.unshift(props.songs[index])
+  }
+
   return(
     <div className='composition' >
       <div className='blackStarBackground' >
         <div className='parallaxBackground' >
           <div className='musicStars' >
-            {props.songs.map((song, index) => {
+            {songs.map((song, index) => {
               index = index + 1
               return (
                 <MusicStar
