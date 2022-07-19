@@ -10,14 +10,14 @@ function App() {
   const [songs, setSongs] = useState({composition: [], production: []})
 
   useEffect(() => {
-    // let data = {production: [{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"}], composition: [{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"}]}
-    // setSongs(data)
-    axios.get('/files')
-      .then(res => {
-        setSongs(res.data)
-        console.log(res.data)
-      })
-      .catch(error => console.log(error))
+    let data = {production: [{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"}], composition: [{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"},{"name":"ICE CAVE","file":"ICE_CAVE_gxyhiy.wav"}]}
+    setSongs(data)
+    // axios.get('/files')
+    //   .then(res => {
+    //     setSongs(res.data)
+    //     console.log(res.data)
+    //   })
+    //   .catch(error => console.log(error))
   }, [])
 
   function parallax(e) {

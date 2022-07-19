@@ -34,12 +34,14 @@ export default function MusicStar(props) {
   let [url, setUrl] = useState(imports[props.color + 'Star'])
   let [playing, setPlaying] = useState(false)
   let [showProgress, setShowProgress] = useState('none')
+  let [loadSong, setLoad] = useState(false)
+  let [hovering, setHovering] = useState(false)
   const uniqueClass = 'musicStar' + props.number
 
   function useOutsideAlerter(ref) {
     useEffect(() => {
       function handleClickOutside(event) {
-        if (ref.current && !ref.current.contains(event.target)) {
+        if (loadSong && ref.current && !ref.current.contains(event.target)) {
           setUrl(imports[props.color + 'Star'])
           setPlaying(false)
           setShowProgress('none')
@@ -50,12 +52,14 @@ export default function MusicStar(props) {
       return () => {
         document.removeEventListener("mousedown", handleClickOutside);
       };
-    }, [ref]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [ref, loadSong]);
   }
   useOutsideAlerter(starRef)
 
   function handleStarHover() {
     !playing && setUrl(imports[props.color + 'Play'])
+    setLoad(true)
   }
 
   function handleStarOut() {
@@ -77,16 +81,43 @@ export default function MusicStar(props) {
   }
 
   function handleTimeUpdate(e) {
-    var player = e.target
-    var currentTime = player.currentTime;
-    var duration = player.duration;
-    if(currentTime === duration) {
-      setPlaying(false)
-      setUrl(imports[props.color + 'Play'])
+    if(!hovering) {
+      var player = e.target
+      var currentTime = player.currentTime;
+      var duration = player.duration;
+      if(currentTime === duration) {
+        setPlaying(false)
+        setUrl(imports[props.color + 'Play'])
+      }
+      var progress = document.getElementsByClassName('progressMarker')[0]
+      progress.style.left = (currentTime +.25)/duration*120-9+'px'
     }
-    var progress = document.getElementsByClassName('progressMarker')[0]
-    progress.style.left = (currentTime +.25)/duration*120-9+'px'
+  }
 
+  function handleProgressHover() {
+    setHovering(true)
+  }
+
+  function handleProgressExit() {
+    setHovering(false)
+  }
+
+  function handleProgressMouseMove(e) {
+    let left = parseInt(getComputedStyle(document.getElementsByClassName(uniqueClass)[0]).left)
+    if(left + document.getElementsByClassName('progress')[0].offsetWidth > e.clientX - 45) {
+      let position = e.clientX - left - 60 + 'px'
+      var progress = document.getElementsByClassName('progressMarker')[0]
+      progress.style.left = position
+    }
+  }
+
+  function handleProgressClick(e) {
+    e.stopPropagation()
+    let player = document.getElementById(uniqueClass + props.name)
+    let position = (e.clientX - document.getElementsByClassName('progress')[0].getBoundingClientRect().left) / document.getElementsByClassName('progress')[0].offsetWidth
+    let duration = player.duration
+    player.currentTime = duration * position
+    setHovering(false)
   }
 
   return(<div
@@ -101,15 +132,21 @@ export default function MusicStar(props) {
         <div className='starGlow' style={{ backgroundImage: `url(${imports[props.color + 'Glow']})` }} ></div>
       </div>
       {url !== imports[props.color + 'Star'] && (<div className='progressBar' >
-        <div className='progress' style={{display: showProgress}}>
+        <div
+          className='progress'
+          onClick={handleProgressClick}
+          onMouseEnter={handleProgressHover}
+          onMouseLeave={handleProgressExit}
+          onMouseMove={handleProgressMouseMove}
+          style={{display: showProgress}}>
           <div className='progressMarker' >
           </div>
         </div>
         <div className='title' >{props.name}</div>
       </div>)}
 
-      <audio id={uniqueClass + props.name} onTimeUpdate={handleTimeUpdate} >
+      {loadSong && <audio id={uniqueClass + props.name} onTimeUpdate={handleTimeUpdate} >
         <source src={props.sound} type="audio/wav"/>
-      </audio>
+      </audio>}
     </div>)
 }

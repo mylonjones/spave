@@ -14,8 +14,8 @@ body {
 }
 
 .answer {
-  -webkit-transition: opacity 1s linear;
-  transition: opacity 1s linear;
+  -webkit-transition: opacity .5s linear;
+  transition: opacity .5s linear;
 }
 
 .home {
@@ -32,11 +32,22 @@ body {
 }
 
 .home .questionContainer {
-  padding-top: 350px;
+  padding-top: 320px;
+  padding-bottom: 55px;
   width: 15rem;
   height: 15rem;
   margin: auto;
-  text-align: center;
+}
+
+.home .questionContainer .whoAmI {
+  width: 240px;
+  padding-left: 33px;
+  -webkit-transition: padding-left .5s linear;
+  transition: padding-left .5s linear;
+}
+
+.home .questionContainer .whoAmI:hover {
+  padding-left: 22px;
 }
 
 .home .landingStar {
@@ -63,7 +74,7 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
-  top: -80px;
+  top: -84px;
 }
 
 .home .landingStar .homeStarContainer .starGlow:hover {
@@ -447,5 +458,67 @@ body {
 .navbar .bigNav .text {
   top: -118px;
   position: relative;
+}
+
+@media (max-width: 1000px) {
+  .navbar {
+    -webkit-transition: color 1s;
+    transition: color 1s;
+    z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    color: white;
+    gap: 4vw;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+  .navbar .smallNav {
+    cursor: pointer;
+    font-size: 3vw;
+    line-height: 12vw;
+    height: 12vw;
+    width: 22vw;
+  }
+  .navbar .smallNav .shadow {
+    -webkit-transition: letter-spacing 1s linear;
+    transition: letter-spacing 1s linear;
+    color: #b7b7b7;
+  }
+  .navbar .smallNav:hover .shadow {
+    letter-spacing: .8px;
+  }
+  .navbar .smallNav .active {
+    letter-spacing: .8px;
+  }
+  .navbar .smallNav .text {
+    top: -100%;
+    position: relative;
+  }
+  .navbar .bigNav {
+    cursor: pointer;
+    font-size: 9vw;
+    height: 12vh;
+    width: 42vw;
+  }
+  .navbar .bigNav .shadow {
+    -webkit-transition: letter-spacing 1s linear;
+    transition: letter-spacing 1s linear;
+    color: #b7b7b7;
+  }
+  .navbar .bigNav:hover .shadow {
+    letter-spacing: .2vw;
+  }
+  .navbar .bigNav .active {
+    letter-spacing: .2vw;
+  }
+  .navbar .bigNav .text {
+    top: -11.3vw;
+    position: relative;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

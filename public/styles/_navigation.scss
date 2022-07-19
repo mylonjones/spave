@@ -60,3 +60,67 @@
     }
   }
 }
+
+@media (max-width: 1000px) {
+  .navbar {
+    transition: color 1s;
+    z-index: 1;
+    display: flex;
+    position: absolute;
+    color: white;
+    gap: 4vw;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+
+    .smallNav {
+      cursor: pointer;
+      font-size: 3vw;
+      line-height: 12vw;
+      height: 12vw;
+      width: 22vw;
+
+      .shadow {
+        transition: letter-spacing 1s linear;
+        color: #b7b7b7;
+      }
+
+      &:hover .shadow {
+        letter-spacing: .8px;
+      }
+
+      .active {
+        letter-spacing: .8px;
+      }
+
+      .text {
+        top: -100%;
+        position: relative;
+      }
+    }
+
+    .bigNav {
+      cursor: pointer;
+      font-size: 9vw;
+      height: 12vh;
+      width: 42vw;
+      .shadow {
+        transition: letter-spacing 1s linear;
+        color: #b7b7b7;
+      }
+
+      &:hover .shadow {
+        letter-spacing: .2vw;
+      }
+
+      .active {
+        letter-spacing: .2vw;
+      }
+
+      .text {
+        top: -11.3vw;
+        position: relative;
+      }
+    }
+  }
+}

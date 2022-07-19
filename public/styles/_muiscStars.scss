@@ -14,22 +14,34 @@
     .musicStarImage {
       width: 55px;
     }
-    .progressBar {
-      width: 150px;
-      .progressPotential {
-        border: 4px solid gray;
-        border-radius: 4px;
-        position: relative;
-        width: 100%
-      }
 
-      .progress {
-        transition: width linear;
-        border: 4px solid #f3f1f5;
-        border-radius: 4px;
-        width: 1%;
+    .progressBar {
+      display: inline-block;
+      width: 120px;
+
+      .progressMarker {
+        z-index: 0;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        border: 10px solid white;
         position: relative;
-        top: -8px;
+        top: -9.75px;
+        left: -9px
+      }
+      .progress {
+        z-index: 1;
+        width: 100%;
+        height: 0px;
+        transition: width linear;
+        border: 4px solid white;
+        border-radius: 4px;
+        position: relative;
+        top: -2px;
+      }
+      .title {
+        top: 10px;
+        position: relative;
       }
     }
   }
