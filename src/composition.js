@@ -16,8 +16,8 @@ export default function Composition(props) {
   }
 
   return(
-    <div className='composition' >
-      <div className='blackStarBackground' >
+    <div className='starPage composition' >
+      <div className='starBackground' >
         <div className='parallaxBackground' >
           <div className='musicStars' >
             {songs.map((song, index) => {

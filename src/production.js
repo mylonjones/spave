@@ -17,8 +17,8 @@ export default function Production(props) {
 
 
   return(
-    <div className='production' >
-      <div className='whiteStarBackground' >
+    <div className='starPage production' >
+      <div className='starBackground' >
         <div className='parallaxBackground' >
           <div className='musicStars' >
           {songs.map((song, index) => {

@@ -14,7 +14,7 @@ export default function Navigation() {
     switch(e.target.innerHTML) {
       case 'PRODUCTION':
         position = '0'
-        document.getElementsByClassName('whiteStarBackground')[0].classList.add('showStars')
+        document.getElementsByClassName('starBackground')[0].classList.add('showStars')
         document.getElementById('production').classList.add('active')
         nav.style.color = 'white'
         break
@@ -26,7 +26,7 @@ export default function Navigation() {
       case 'COMPOSITION':
         position = '-200vw'
         nav.style.color = 'black'
-        document.getElementsByClassName('blackStarBackground')[0].classList.add('showStars')
+        document.getElementsByClassName('starBackground')[1].classList.add('showStars')
         document.getElementById('composition').classList.add('active')
         break
       default:

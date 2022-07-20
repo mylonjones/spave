@@ -1,0 +1,198 @@
+
+//StarPage Styles Shared
+
+.starPage {
+  width: 100vw;
+  height: 100vh;
+  display: inline-block;
+  vertical-align: top;
+  background-size: 100%;
+  .starBackground {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 2s linear;
+
+    .parallaxBackground {
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-position: center;
+      .pageLogo {
+        width: fit-content;
+        margin: auto;
+        padding-top: 32vh;
+      }
+    }
+  }
+  .showStars {
+    opacity: 1;
+  }
+}
+
+//Production Styles
+
+.production {
+  background-color: black;
+  color: white;
+
+  .starBackground {
+    background-image: url("images/whiteConst.png"), radial-gradient(circle, #2E3143 0%, black 100%);
+
+    .parallaxBackground {
+      background-image: url("images/whiteBackgroundStars.png");
+
+      .logo {
+        width: 230px;
+      }
+
+      .progressMarker {
+        border: 10px solid white;
+      }
+
+      .progress {
+        border: 4px solid white;
+      }
+    }
+  }
+}
+
+.musicStarWhite1 {
+  top: 41vh;
+  left: 7vw;
+}
+
+.musicStarWhite2 {
+  top: 16vh;
+  left: 55vw;
+}
+
+.musicStarWhite3 {
+  top: 48vh;
+  left: 29vw;
+}
+
+.musicStarWhite4 {
+  top: 76vh;
+  left: 78vw;
+}
+
+.musicStarWhite5 {
+  top: 36vh;
+  left: 76vw;
+}
+
+.musicStarWhite6 {
+  top: 75vh;
+  left: 22vw;
+}
+
+.musicStarWhite7 {
+  top: 38vh;
+  left: 61vw;
+}
+
+.musicStarWhite8 {
+  top: 83vh;
+  left: 53vw;
+}
+
+.musicStarWhite9 {
+  top: 22vh;
+  left: 24vw;
+}
+
+//Composition Styles
+
+.composition {
+  background-color: white;
+  color: black;
+
+  .starBackground {
+    background-image: url("images/blackConst.png"), radial-gradient(circle, #B5BADC 0%, white 100%);
+
+    .parallaxBackground {
+      background-image: url("images/blackBackgroundStars.png");
+
+      .logo {
+        width: 240px;
+      }
+
+      .progressMarker {
+        border: 10px solid black;
+      }
+
+      .progress {
+        border: 4px solid black;
+      }
+    }
+  }
+}
+
+
+.musicStarBlack1 {
+  top: 20vh;
+  left: 214vw;
+}
+
+.musicStarBlack2 {
+  top: 14vh;
+  left: 289vw;
+}
+
+.musicStarBlack3 {
+  top: 48vh;
+  left: 218vw;
+}
+
+.musicStarBlack4 {
+  top: 79vh;
+  left: 263vw;
+}
+
+.musicStarBlack5 {
+  top: 52vh;
+  left: 281vw;
+}
+
+.musicStarBlack6 {
+  top: 84vh;
+  left: 214vw;
+}
+
+.musicStarBlack7 {
+  top: 46vh;
+  left: 263vw;
+}
+
+.musicStarBlack8 {
+  top: 65vh;
+  left: 256vw;
+}
+
+.musicStarBlack9 {
+  top: 27vh;
+  left: 235vw;
+}
+
+.musicStarBlack10 {
+  top: 19vh;
+  left: 265vw;
+}
+
+.musicStarBlack11 {
+  top: 90vh;
+  left: 274vw;
+}
+
+.musicStarBlack12 {
+  top: 57vh;
+  left: 203vw;
+}
+
+.musicStarBlack13 {
+  top: 65vh;
+  left: 227vw;
+}

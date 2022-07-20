@@ -27,8 +27,8 @@ function App() {
     var amountMovedConstY = (e.pageY * -1 / 180);
     document.getElementsByClassName('parallaxBackground')[0].style.backgroundPosition = amountMovedX + 'px ' + amountMovedY + 'px'
     document.getElementsByClassName('parallaxBackground')[1].style.backgroundPosition = amountMovedX + 'px ' + amountMovedY + 'px'
-    document.getElementsByClassName('whiteStarBackground')[0].style.backgroundPosition = amountMovedConstX + 'px ' + amountMovedConstY + 'px'
-    document.getElementsByClassName('blackStarBackground')[0].style.backgroundPosition = amountMovedConstX + 'px ' + amountMovedConstY + 'px'
+    document.getElementsByClassName('starBackground')[0].style.backgroundPosition = amountMovedConstX + 'px ' + amountMovedConstY + 'px'
+    document.getElementsByClassName('starBackground')[1].style.backgroundPosition = amountMovedConstX + 'px ' + amountMovedConstY + 'px'
   }
 
   return (

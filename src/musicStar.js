@@ -104,7 +104,8 @@ export default function MusicStar(props) {
 
   function handleProgressMouseMove(e) {
     let left = parseInt(getComputedStyle(document.getElementsByClassName(uniqueClass)[0]).left)
-    if(left + document.getElementsByClassName('progress')[0].offsetWidth > e.clientX - 45) {
+    let width = document.getElementsByClassName('progress')[0].offsetWidth
+    if(left + width > e.clientX - 45 && left < e.clientX - 45) {
       let position = e.clientX - left - 60 + 'px'
       var progress = document.getElementsByClassName('progressMarker')[0]
       progress.style.left = position
