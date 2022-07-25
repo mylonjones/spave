@@ -1,7 +1,11 @@
+$shadowColor: #b7b7b7;
+$smallSpacing: .8px;
+$bigSpacing: 2px;
+$spacingTransition: letter-spacing .4s linear;
+
 .navbar {
   transition: color 1s;
   color: white;
-
   gap: 65px;
   z-index: 1;
   display: flex;
@@ -10,6 +14,11 @@
   justify-content: center;
   text-align: center;
 
+  .shadow {
+    transition: $spacingTransition;
+    color: $shadowColor;
+  }
+
   .smallNav {
     cursor: pointer;
     font-size: 30px;
@@ -17,17 +26,12 @@
     height: 130px;
     width: 212px;
 
-    .shadow {
-      transition: letter-spacing 1s linear;
-      color: #b7b7b7;
-    }
-
     &:hover .shadow {
-      letter-spacing: .8px;
+      letter-spacing: $smallSpacing;
     }
 
     .active {
-      letter-spacing: .8px;
+      letter-spacing: $smallSpacing;
     }
 
     .text {
@@ -40,18 +44,14 @@
     cursor: pointer;
     font-size: 94px;
     height: 118px;
-    width: 420px;
-    .shadow {
-      transition: letter-spacing 1s linear;
-      color: #b7b7b7;
-    }
+    width: 435px;
 
     &:hover .shadow {
-      letter-spacing: 1.5px;
+      letter-spacing: $bigSpacing;
     }
 
     .active {
-      letter-spacing: 1.5px;
+      letter-spacing: $bigSpacing;
     }
 
     .text {
@@ -86,6 +86,28 @@
 
       .text {
         top: -11.3vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    gap: 0vw;
+    .bigNav {
+      height: 0;
+    }
+    .smallNav {
+      font-size: 3.75vw;
+      line-height: 12vw;
+      width: 28vw;
+
+      &:hover .shadow {
+        letter-spacing: .1vw;
+      }
+
+      .active {
+        letter-spacing: .1vw;
       }
     }
   }

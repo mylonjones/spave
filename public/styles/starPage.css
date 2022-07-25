@@ -28,7 +28,17 @@
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
-  padding-top: 32vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .starPage .showStars {
@@ -71,7 +81,7 @@
 }
 
 .musicStarWhite3 {
-  top: 48vh;
+  top: 51vh;
   left: 29vw;
 }
 
@@ -81,7 +91,7 @@
 }
 
 .musicStarWhite5 {
-  top: 36vh;
+  top: 32vh;
   left: 76vw;
 }
 
@@ -91,7 +101,7 @@
 }
 
 .musicStarWhite7 {
-  top: 38vh;
+  top: 44vh;
   left: 61vw;
 }
 
@@ -193,5 +203,193 @@
 .musicStarBlack13 {
   top: 65vh;
   left: 227vw;
+}
+
+@media (max-width: 1250px) {
+  .musicStarWhite1 {
+    top: 40vh;
+    left: 10vw;
+  }
+  .musicStarWhite2 {
+    top: 16vh;
+    left: 55vw;
+  }
+  .musicStarWhite3 {
+    top: 58vh;
+    left: 27vw;
+  }
+  .musicStarWhite4 {
+    top: 70vh;
+    left: 77vw;
+  }
+  .musicStarWhite5 {
+    top: 31vh;
+    left: 73vw;
+  }
+  .musicStarWhite6 {
+    top: 77vh;
+    left: 14vw;
+  }
+  .musicStarWhite7 {
+    top: 56vh;
+    left: 63vw;
+  }
+  .musicStarWhite8 {
+    top: 83vh;
+    left: 53vw;
+  }
+  .musicStarWhite9 {
+    top: 22vh;
+    left: 24vw;
+  }
+  .musicStarBlack1 {
+    top: 20vh;
+    left: 220vw;
+  }
+  .musicStarBlack2 {
+    top: 14vh;
+    left: 280vw;
+  }
+  .musicStarBlack3 {
+    top: 53vh;
+    left: 223vw;
+  }
+  .musicStarBlack4 {
+    top: 81vh;
+    left: 252vw;
+  }
+  .musicStarBlack5 {
+    top: 34vh;
+    left: 280vw;
+  }
+  .musicStarBlack6 {
+    top: 70vh;
+    left: 218vw;
+  }
+  .musicStarBlack7 {
+    top: 46vh;
+    left: 269vw;
+  }
+  .musicStarBlack8 {
+    top: 63vh;
+    left: 259vw;
+  }
+  .musicStarBlack9 {
+    top: 22vh;
+    left: 240vw;
+  }
+  .musicStarBlack10 {
+    top: 19vh;
+    left: 265vw;
+  }
+  .musicStarBlack11 {
+    top: 77vh;
+    left: 272vw;
+  }
+  .musicStarBlack12 {
+    top: 37vh;
+    left: 210vw;
+  }
+  .musicStarBlack13 {
+    top: 85vh;
+    left: 236vw;
+  }
+}
+
+@media (max-width: 550px) {
+  .production .starBackground .parallaxBackground .pageLogo .logo {
+    width: 35vw;
+  }
+  .composition .starBackground .parallaxBackground .pageLogo .logo {
+    width: 39vw;
+  }
+  .musicStarWhite1 {
+    top: 26vh;
+    left: 8vw;
+  }
+  .musicStarWhite2 {
+    top: 10vh;
+    left: 67vw;
+  }
+  .musicStarWhite3 {
+    top: 62vh;
+    left: 28vw;
+  }
+  .musicStarWhite4 {
+    top: 67vh;
+    left: 66vw;
+  }
+  .musicStarWhite5 {
+    top: 30vh;
+    left: 62vw;
+  }
+  .musicStarWhite6 {
+    top: 74vh;
+    left: 10vw;
+  }
+  .musicStarWhite7 {
+    top: 21vh;
+    left: 48vw;
+  }
+  .musicStarWhite8 {
+    top: 79vh;
+    left: 49vw;
+  }
+  .musicStarWhite9 {
+    top: 13vh;
+    left: 20vw;
+  }
+  .musicStarBlack1 {
+    top: 12vh;
+    left: 205vw;
+  }
+  .musicStarBlack2 {
+    top: 7vh;
+    left: 258vw;
+  }
+  .musicStarBlack3 {
+    top: 37vh;
+    left: 206vw;
+  }
+  .musicStarBlack4 {
+    top: 76vh;
+    left: 273vw;
+  }
+  .musicStarBlack5 {
+    top: 40vh;
+    left: 273vw;
+  }
+  .musicStarBlack6 {
+    top: 66vh;
+    left: 232vw;
+  }
+  .musicStarBlack7 {
+    top: 27vh;
+    left: 262vw;
+  }
+  .musicStarBlack8 {
+    top: 63vh;
+    left: 260vw;
+  }
+  .musicStarBlack9 {
+    top: 24vh;
+    left: 218vw;
+  }
+  .musicStarBlack10 {
+    top: 17vh;
+    left: 241vw;
+  }
+  .musicStarBlack11 {
+    top: 79vh;
+    left: 246vw;
+  }
+  .musicStarBlack12 {
+    top: 58vh;
+    left: 212vw;
+  }
+  .musicStarBlack13 {
+    top: 80vh;
+    left: 207vw;
+  }
 }
 /*# sourceMappingURL=starPage.css.map */

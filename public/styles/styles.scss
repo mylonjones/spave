@@ -31,15 +31,18 @@ body {
 
 
   .questionContainer {
+
+    //vertical positions
     padding-top: 320px;
     padding-bottom: 55px;
+
     width: 15rem;
     height: 15rem;
     margin: auto;
 
     .whoAmI {
       width: 240px;
-      padding-left: 33px;
+      padding-left: 37px;
       transition: padding-left .5s linear;
       &:hover {
         padding-left: 22px;
@@ -53,9 +56,18 @@ body {
     margin: auto;
     margin-top: -50px;
     width: fit-content;
+
+    .contactInfo {
+      transition: opacity .3s linear;
+      position: relative;
+      opacity: 0;
+      top: -70px;
+    }
     .homeStarContainer {
+      transition: opacity .3s linear;
       width: 80px;
       height: 80px;
+      margin: auto;
 
       .starGlow {
         background-size: 140%;
@@ -67,6 +79,7 @@ body {
         height: 100%;
         position: relative;
         top: -84px;
+        z-index: 1;
         &:hover {
           opacity: 1;
         }
@@ -85,6 +98,30 @@ body {
   transition: transform 1s;
   white-space: nowrap;
   transform: translateX(-100vw)
+}
+
+@media (max-width: 400px) {
+  .home {
+    .landingStar {
+      margin-top: 0;
+      width: auto;
+
+      .contactInfo {
+        font-size: 4vw;
+      }
+      .homeStarContainer {
+        .starGlow {
+          opacity: 1;
+        }
+      }
+    }
+
+    .questionContainer {
+
+      padding-top: 25vh;
+      padding-bottom: 0;
+    }
+  }
 }
 
 @import './starPage';

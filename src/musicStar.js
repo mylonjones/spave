@@ -30,18 +30,25 @@ export default function MusicStar(props) {
 
 
   const starRef = useRef()
+  const progressBar = useRef()
+
+
 
   let [url, setUrl] = useState(imports[props.color + 'Star'])
   let [playing, setPlaying] = useState(false)
   let [showProgress, setShowProgress] = useState('none')
   let [loadSong, setLoad] = useState(false)
   let [hovering, setHovering] = useState(false)
+  let [touches, setTouches] = useState(0)
+
   const uniqueClass = 'musicStar' + props.number
 
   function useOutsideAlerter(ref) {
     useEffect(() => {
       function handleClickOutside(event) {
+
         if (loadSong && ref.current && !ref.current.contains(event.target)) {
+          setTouches(0)
           setUrl(imports[props.color + 'Star'])
           setPlaying(false)
           setShowProgress('none')
@@ -57,6 +64,7 @@ export default function MusicStar(props) {
   }
   useOutsideAlerter(starRef)
 
+
   function handleStarHover() {
     !playing && setUrl(imports[props.color + 'Play'])
     setLoad(true)
@@ -67,30 +75,37 @@ export default function MusicStar(props) {
     !playing && setUrl(imports[props.color + 'Star'])
   }
 
+  function handleTouch (e) {
+    setTouches(touches + 1)
+  }
+
   function handleStarClick() {
-    if(playing) {
-      setUrl(imports[props.color + 'Play'])
-      setPlaying(false)
-      document.getElementById(uniqueClass + props.name).pause()
-    } else {
-      setUrl(imports[props.color + 'Pause'])
-      setShowProgress('block')
-      setPlaying(true)
-      document.getElementById(uniqueClass + props.name).play()
+    if(touches !== 1) {
+      if(playing) {
+        setUrl(imports[props.color + 'Play'])
+        setPlaying(false)
+        document.getElementById(uniqueClass + props.name).pause()
+      } else {
+        setUrl(imports[props.color + 'Pause'])
+        setShowProgress('block')
+        setPlaying(true)
+        document.getElementById(uniqueClass + props.name).play()
+      }
     }
   }
 
   function handleTimeUpdate(e) {
-    if(!hovering) {
+    if(playing && !hovering) {
       var player = e.target
       var currentTime = player.currentTime;
       var duration = player.duration;
+      let width = progressBar.current.offsetWidth
       if(currentTime === duration) {
         setPlaying(false)
         setUrl(imports[props.color + 'Play'])
       }
       var progress = document.getElementsByClassName('progressMarker')[0]
-      progress.style.left = (currentTime +.25)/duration*120-9+'px'
+      progress.style.left = (currentTime +.25)/duration*width-9+'px'
     }
   }
 
@@ -127,12 +142,15 @@ export default function MusicStar(props) {
     onMouseEnter={handleStarHover}
     onMouseLeave={handleStarOut}
     onClick={handleStarClick}
+    onTouchStart={handleTouch}
     >
       <div className='glowContainer' >
         <img className='musicStarImage' src={url} alt='musicPlayer' ></img>
         <div className='starGlow' style={{ backgroundImage: `url(${imports[props.color + 'Glow']})` }} ></div>
       </div>
-      {url !== imports[props.color + 'Star'] && (<div className='progressBar' >
+      {url !== imports[props.color + 'Star'] && (<div className='progressBar'
+      ref={progressBar}
+      >
         <div
           className='progress'
           onClick={handleProgressClick}

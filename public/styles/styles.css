@@ -41,7 +41,7 @@ body {
 
 .home .questionContainer .whoAmI {
   width: 240px;
-  padding-left: 33px;
+  padding-left: 37px;
   -webkit-transition: padding-left .5s linear;
   transition: padding-left .5s linear;
 }
@@ -59,9 +59,20 @@ body {
   width: fit-content;
 }
 
+.home .landingStar .contactInfo {
+  -webkit-transition: opacity .3s linear;
+  transition: opacity .3s linear;
+  position: relative;
+  opacity: 0;
+  top: -70px;
+}
+
 .home .landingStar .homeStarContainer {
+  -webkit-transition: opacity .3s linear;
+  transition: opacity .3s linear;
   width: 80px;
   height: 80px;
+  margin: auto;
 }
 
 .home .landingStar .homeStarContainer .starGlow {
@@ -75,6 +86,7 @@ body {
   height: 100%;
   position: relative;
   top: -84px;
+  z-index: 1;
 }
 
 .home .landingStar .homeStarContainer .starGlow:hover {
@@ -94,6 +106,23 @@ body {
   white-space: nowrap;
   -webkit-transform: translateX(-100vw);
           transform: translateX(-100vw);
+}
+
+@media (max-width: 400px) {
+  .home .landingStar {
+    margin-top: 0;
+    width: auto;
+  }
+  .home .landingStar .contactInfo {
+    font-size: 4vw;
+  }
+  .home .landingStar .homeStarContainer .starGlow {
+    opacity: 1;
+  }
+  .home .questionContainer {
+    padding-top: 25vh;
+    padding-bottom: 0;
+  }
 }
 
 .starPage {
@@ -126,7 +155,17 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
-  padding-top: 32vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .starPage .showStars {
@@ -169,7 +208,7 @@ body {
 }
 
 .musicStarWhite3 {
-  top: 48vh;
+  top: 51vh;
   left: 29vw;
 }
 
@@ -179,7 +218,7 @@ body {
 }
 
 .musicStarWhite5 {
-  top: 36vh;
+  top: 32vh;
   left: 76vw;
 }
 
@@ -189,7 +228,7 @@ body {
 }
 
 .musicStarWhite7 {
-  top: 38vh;
+  top: 44vh;
   left: 61vw;
 }
 
@@ -293,6 +332,194 @@ body {
   left: 227vw;
 }
 
+@media (max-width: 1250px) {
+  .musicStarWhite1 {
+    top: 40vh;
+    left: 10vw;
+  }
+  .musicStarWhite2 {
+    top: 16vh;
+    left: 55vw;
+  }
+  .musicStarWhite3 {
+    top: 58vh;
+    left: 27vw;
+  }
+  .musicStarWhite4 {
+    top: 70vh;
+    left: 77vw;
+  }
+  .musicStarWhite5 {
+    top: 31vh;
+    left: 73vw;
+  }
+  .musicStarWhite6 {
+    top: 77vh;
+    left: 14vw;
+  }
+  .musicStarWhite7 {
+    top: 56vh;
+    left: 63vw;
+  }
+  .musicStarWhite8 {
+    top: 83vh;
+    left: 53vw;
+  }
+  .musicStarWhite9 {
+    top: 22vh;
+    left: 24vw;
+  }
+  .musicStarBlack1 {
+    top: 20vh;
+    left: 220vw;
+  }
+  .musicStarBlack2 {
+    top: 14vh;
+    left: 280vw;
+  }
+  .musicStarBlack3 {
+    top: 53vh;
+    left: 223vw;
+  }
+  .musicStarBlack4 {
+    top: 81vh;
+    left: 252vw;
+  }
+  .musicStarBlack5 {
+    top: 34vh;
+    left: 280vw;
+  }
+  .musicStarBlack6 {
+    top: 70vh;
+    left: 218vw;
+  }
+  .musicStarBlack7 {
+    top: 46vh;
+    left: 269vw;
+  }
+  .musicStarBlack8 {
+    top: 63vh;
+    left: 259vw;
+  }
+  .musicStarBlack9 {
+    top: 22vh;
+    left: 240vw;
+  }
+  .musicStarBlack10 {
+    top: 19vh;
+    left: 265vw;
+  }
+  .musicStarBlack11 {
+    top: 77vh;
+    left: 272vw;
+  }
+  .musicStarBlack12 {
+    top: 37vh;
+    left: 210vw;
+  }
+  .musicStarBlack13 {
+    top: 85vh;
+    left: 236vw;
+  }
+}
+
+@media (max-width: 550px) {
+  .production .starBackground .parallaxBackground .pageLogo .logo {
+    width: 35vw;
+  }
+  .composition .starBackground .parallaxBackground .pageLogo .logo {
+    width: 39vw;
+  }
+  .musicStarWhite1 {
+    top: 26vh;
+    left: 8vw;
+  }
+  .musicStarWhite2 {
+    top: 10vh;
+    left: 67vw;
+  }
+  .musicStarWhite3 {
+    top: 62vh;
+    left: 28vw;
+  }
+  .musicStarWhite4 {
+    top: 67vh;
+    left: 66vw;
+  }
+  .musicStarWhite5 {
+    top: 30vh;
+    left: 62vw;
+  }
+  .musicStarWhite6 {
+    top: 74vh;
+    left: 10vw;
+  }
+  .musicStarWhite7 {
+    top: 21vh;
+    left: 48vw;
+  }
+  .musicStarWhite8 {
+    top: 79vh;
+    left: 49vw;
+  }
+  .musicStarWhite9 {
+    top: 13vh;
+    left: 20vw;
+  }
+  .musicStarBlack1 {
+    top: 12vh;
+    left: 205vw;
+  }
+  .musicStarBlack2 {
+    top: 7vh;
+    left: 258vw;
+  }
+  .musicStarBlack3 {
+    top: 37vh;
+    left: 206vw;
+  }
+  .musicStarBlack4 {
+    top: 76vh;
+    left: 273vw;
+  }
+  .musicStarBlack5 {
+    top: 40vh;
+    left: 273vw;
+  }
+  .musicStarBlack6 {
+    top: 66vh;
+    left: 232vw;
+  }
+  .musicStarBlack7 {
+    top: 27vh;
+    left: 262vw;
+  }
+  .musicStarBlack8 {
+    top: 63vh;
+    left: 260vw;
+  }
+  .musicStarBlack9 {
+    top: 24vh;
+    left: 218vw;
+  }
+  .musicStarBlack10 {
+    top: 17vh;
+    left: 241vw;
+  }
+  .musicStarBlack11 {
+    top: 79vh;
+    left: 246vw;
+  }
+  .musicStarBlack12 {
+    top: 58vh;
+    left: 212vw;
+  }
+  .musicStarBlack13 {
+    top: 80vh;
+    left: 207vw;
+  }
+}
+
 .navbar {
   -webkit-transition: color 1s;
   transition: color 1s;
@@ -310,6 +537,12 @@ body {
   text-align: center;
 }
 
+.navbar .shadow {
+  -webkit-transition: letter-spacing 0.4s linear;
+  transition: letter-spacing 0.4s linear;
+  color: #b7b7b7;
+}
+
 .navbar .smallNav {
   cursor: pointer;
   font-size: 30px;
@@ -318,18 +551,12 @@ body {
   width: 212px;
 }
 
-.navbar .smallNav .shadow {
-  -webkit-transition: letter-spacing 1s linear;
-  transition: letter-spacing 1s linear;
-  color: #b7b7b7;
-}
-
 .navbar .smallNav:hover .shadow {
-  letter-spacing: .8px;
+  letter-spacing: 0.8px;
 }
 
 .navbar .smallNav .active {
-  letter-spacing: .8px;
+  letter-spacing: 0.8px;
 }
 
 .navbar .smallNav .text {
@@ -341,21 +568,15 @@ body {
   cursor: pointer;
   font-size: 94px;
   height: 118px;
-  width: 420px;
-}
-
-.navbar .bigNav .shadow {
-  -webkit-transition: letter-spacing 1s linear;
-  transition: letter-spacing 1s linear;
-  color: #b7b7b7;
+  width: 435px;
 }
 
 .navbar .bigNav:hover .shadow {
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
 }
 
 .navbar .bigNav .active {
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
 }
 
 .navbar .bigNav .text {
@@ -386,6 +607,26 @@ body {
   }
   .navbar .bigNav .text {
     top: -11.3vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    gap: 0vw;
+  }
+  .navbar .bigNav {
+    height: 0;
+  }
+  .navbar .smallNav {
+    font-size: 3.75vw;
+    line-height: 12vw;
+    width: 28vw;
+  }
+  .navbar .smallNav:hover .shadow {
+    letter-spacing: .1vw;
+  }
+  .navbar .smallNav .active {
+    letter-spacing: .1vw;
   }
 }
 
@@ -431,7 +672,7 @@ body {
   height: 0;
   border-radius: 50%;
   position: relative;
-  top: -9.75px;
+  top: -9.8px;
   left: -9px;
 }
 
@@ -448,5 +689,47 @@ body {
 .musicStars .musicStar .progressBar .title {
   top: 10px;
   position: relative;
+}
+
+@media (max-width: 450px) {
+  .musicStars .musicStar {
+    width: 45px;
+  }
+  .musicStars .musicStar .progressBar {
+    width: 75px;
+    position: relative;
+    top: 25px;
+    left: -59px;
+  }
+  .musicStars .musicStar .progressBar .progressMarker {
+    top: -7.5px;
+    border-width: 7px;
+  }
+  .musicStars .musicStar .progressBar .progress {
+    border-radius: 4px;
+    border-width: 2px;
+    top: 21px;
+  }
+  .musicStars .musicStar .progressBar .title {
+    top: -12px;
+  }
+  .musicStars .musicStar .glowContainer {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+  }
+  .musicStars .musicStar .glowContainer .musicStarImage {
+    height: 34px;
+  }
+  .musicStars .musicStar .glowContainer .starGlow {
+    background-position: center;
+    position: relative;
+    background-size: 130%;
+    width: 120%;
+    height: 120%;
+    top: -46.5px;
+    left: -5px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

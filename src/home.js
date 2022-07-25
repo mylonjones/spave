@@ -1,5 +1,4 @@
-import star from './images/whiteStar.svg'
-import glow from './images/whiteGlowStar.svg'
+import url from './images/whiteStar.svg'
 import { useState, useRef, useEffect } from 'react'
 
 
@@ -7,23 +6,21 @@ import { useState, useRef, useEffect } from 'react'
 
 export default function Home() {
 
-  let [url, setUrl] = useState(star)
+  let [Opacity, setOpacity] = useState(0)
 
-  let [showAnswer, setShowAnswer] = useState(0)
+  let star = useRef()
+  let contactInfo = useRef()
 
-  let [infoContent, setInfoContent] = useState(null)
+
 
   const starRef = useRef()
-
-  let intro = '\nI AM APOLLOS\nTHIS IS MY WORK\nCLICK THE STARS\nINQUIRE.'
-
-  let info = `APOLLOSPRODUCTIONS1@GMAIL.COM\n@AIDENSTROZZI`
 
   function useOutsideAlerter(ref) {
     useEffect(() => {
       function handleClickOutside(event) {
         if (ref.current && !ref.current.contains(event.target)) {
-          setInfoContent(null)
+          star.current.style.opacity = 1
+          contactInfo.current.style.opacity = 0
         }
       }
       document.addEventListener("mousedown", handleClickOutside);
@@ -35,24 +32,17 @@ export default function Home() {
 
   useOutsideAlerter(starRef)
 
-  function handleStarHover(e) {
-    setUrl(glow)
+  function handleStarClick() {
+    star.current.style.opacity = 0
+    contactInfo.current.style.opacity = 1
   }
 
-  function handleStarOut(e) {
-    setUrl(star)
+  function handleQuestionHover() {
+    setOpacity(1)
   }
 
-  function handleStarClick(e) {
-    setInfoContent(info)
-  }
-
-  function handleQuestionHover(e) {
-    setShowAnswer(1)
-  }
-
-  function handleQuestionOut(e) {
-    setShowAnswer(0)
+  function handleQuestionOut() {
+    setOpacity(0)
   }
 
 
@@ -64,20 +54,23 @@ export default function Home() {
         onMouseLeave={handleQuestionOut}
       >
         {`//WHO AM I?`}
-        <span className='answer' style={{opacity: showAnswer}} >
-          {intro}
+        <span className='answer' style={{opacity: Opacity}} >
+          {'\nI AM APOLLOS\nTHIS IS MY WORK\nCLICK THE STARS\nINQUIRE.'}
         </span>
       </div>
     </div>
     <div
       className='landingStar'
       ref={starRef}
-      onMouseEnter={handleStarHover}
-      onMouseLeave={handleStarOut}
       onClick={handleStarClick}
-    >{(infoContent && <div style={{paddingTop: '10px'} }>{infoContent}</div>) ||<div className='homeStarContainer'>
+    >
+      <div ref={star} className='homeStarContainer'>
         <img className='homeStar' src={url} alt='star'></img>
         <div className='starGlow' ></div>
-      </div>}</div>
+      </div>
+      <div ref={contactInfo} className='contactInfo' >
+        {`APOLLOSPRODUCTIONS1@GMAIL.COM\n@AIDENSTROZZI`}
+      </div>
+    </div>
   </div>)
 }
