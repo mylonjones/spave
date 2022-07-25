@@ -1,46 +1,98 @@
 
-.pageLogo {
-  width: fit-content;
-  margin: auto;
-  padding-top: 32vh;
-}
-
 .musicStars {
   height: 0;
 
   .musicStar {
     width: fit-content;
     position: absolute;
-    .musicStarImage {
-      width: 55px;
+
+    .glowContainer {
+      display:inline-block;
+      width: 45px;
+      height: 45px;
+      text-align: center;
+      .musicStarImage {
+        height: 45px;
+      }
+      .starGlow {
+        background-position: center;
+        position: relative;
+        background-size: 130%;
+        width: 137%;
+        height: 137%;
+        top: -56px;
+        left: -9px;
+      }
     }
+
     .progressBar {
-      width: 150px;
-      .progressPotential {
-        border: 4px solid gray;
-        border-radius: 4px;
+      display: inline-block;
+      width: 120px;
+      .progressMarker {
+        width: 0;
+        height: 0;
+        border-radius: 50%;
         position: relative;
-        width: 100%
+        top: -9.8px;
+        left: -9px
       }
-
       .progress {
+        width: 100%;
+        height: 0px;
         transition: width linear;
-        border: 4px solid #f3f1f5;
         border-radius: 4px;
-        width: 1%;
         position: relative;
-        top: -8px;
+        top: -2px;
+      }
+      .title {
+        top: 10px;
+        position: relative;
       }
     }
   }
+}
 
-  .musicStar1 {
-    top: 20vh;
-    left: 10vw;
-  }
+@media (max-width: 450px) {
+  .musicStars {
+    .musicStar {
+      width: 45px;
+      .progressBar {
+        width: 75px;
+        position: relative;
+        top: 25px;
+        left: -59px;
+        .progressMarker {
+          top: -7.5px;
+          border-width: 7px;
+        }
+        .progress {
+          border-radius: 4px;
+          border-width: 2px;
+          top: 21px;
+        }
+        .title {
+          top: -12px;
+        }
+      }
 
-  .musicStar2 {
-    top: 14vh;
-    left: 30vw;
+      .glowContainer {
+        display:inline-block;
+        width: 45px;
+        height: 45px;
+        text-align: center;
+        .musicStarImage {
+          height: 34px;
+        }
+        .starGlow {
+          background-position: center;
+          position: relative;
+          background-size: 130%;
+          width: 120%;
+          height: 120%;
+          top: -46.5px;
+          left: -5px;
+        }
+      }
+    }
   }
 }

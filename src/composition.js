@@ -1,9 +1,9 @@
 import logo from './images/blackLogo.png'
 import MusicStar from './musicStar'
 
-const url = 'https://res.cloudinary.com/dzgsesdip/video/upload/v1656525394/composition/'
+// const url = 'https://res.cloudinary.com/dzgsesdip/video/upload/v1656525394/composition/'
 
-// const url = 'https://res.cloudinary.com/djsqhh5qc/video/upload/v1656800397/COMPOSITION/'
+const url = 'https://res.cloudinary.com/djsqhh5qc/video/upload/v1656800397/COMPOSITION/'
 
 export default function Composition(props) {
 

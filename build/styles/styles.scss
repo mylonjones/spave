@@ -15,7 +15,7 @@ body {
 }
 
 .answer {
-  transition: opacity 1s linear;
+  transition: opacity .5s linear;
 }
 
 .home {
@@ -31,11 +31,24 @@ body {
 
 
   .questionContainer {
-    padding-top: 350px;
+
+    //vertical positions
+    padding-top: 320px;
+    padding-bottom: 55px;
+
     width: 15rem;
     height: 15rem;
     margin: auto;
-    text-align: center;
+
+    .whoAmI {
+      width: 240px;
+      padding-left: 37px;
+      transition: padding-left .5s linear;
+      &:hover {
+        padding-left: 22px;
+      }
+
+    }
   }
 
   .landingStar {
@@ -43,9 +56,18 @@ body {
     margin: auto;
     margin-top: -50px;
     width: fit-content;
+
+    .contactInfo {
+      transition: opacity .3s linear;
+      position: relative;
+      opacity: 0;
+      top: -70px;
+    }
     .homeStarContainer {
+      transition: opacity .3s linear;
       width: 80px;
       height: 80px;
+      margin: auto;
 
       .starGlow {
         background-size: 140%;
@@ -56,7 +78,8 @@ body {
         width: 100%;
         height: 100%;
         position: relative;
-        top: -80px;
+        top: -84px;
+        z-index: 1;
         &:hover {
           opacity: 1;
         }
@@ -77,6 +100,30 @@ body {
   transform: translateX(-100vw)
 }
 
-@import './production';
-@import './composition';
+@media (max-width: 400px) {
+  .home {
+    .landingStar {
+      margin-top: 0;
+      width: auto;
+
+      .contactInfo {
+        font-size: 4vw;
+      }
+      .homeStarContainer {
+        .starGlow {
+          opacity: 1;
+        }
+      }
+    }
+
+    .questionContainer {
+
+      padding-top: 25vh;
+      padding-bottom: 0;
+    }
+  }
+}
+
+@import './starPage';
 @import './navigation';
+@import './muiscStars';

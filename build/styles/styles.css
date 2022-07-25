@@ -14,8 +14,8 @@ body {
 }
 
 .answer {
-  -webkit-transition: opacity 1s linear;
-  transition: opacity 1s linear;
+  -webkit-transition: opacity .5s linear;
+  transition: opacity .5s linear;
 }
 
 .home {
@@ -32,11 +32,22 @@ body {
 }
 
 .home .questionContainer {
-  padding-top: 350px;
+  padding-top: 320px;
+  padding-bottom: 55px;
   width: 15rem;
   height: 15rem;
   margin: auto;
-  text-align: center;
+}
+
+.home .questionContainer .whoAmI {
+  width: 240px;
+  padding-left: 37px;
+  -webkit-transition: padding-left .5s linear;
+  transition: padding-left .5s linear;
+}
+
+.home .questionContainer .whoAmI:hover {
+  padding-left: 22px;
 }
 
 .home .landingStar {
@@ -48,9 +59,20 @@ body {
   width: fit-content;
 }
 
+.home .landingStar .contactInfo {
+  -webkit-transition: opacity .3s linear;
+  transition: opacity .3s linear;
+  position: relative;
+  opacity: 0;
+  top: -70px;
+}
+
 .home .landingStar .homeStarContainer {
+  -webkit-transition: opacity .3s linear;
+  transition: opacity .3s linear;
   width: 80px;
   height: 80px;
+  margin: auto;
 }
 
 .home .landingStar .homeStarContainer .starGlow {
@@ -63,7 +85,8 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
-  top: -80px;
+  top: -84px;
+  z-index: 1;
 }
 
 .home .landingStar .homeStarContainer .starGlow:hover {
@@ -85,112 +108,93 @@ body {
           transform: translateX(-100vw);
 }
 
-.production {
+@media (max-width: 400px) {
+  .home .landingStar {
+    margin-top: 0;
+    width: auto;
+  }
+  .home .landingStar .contactInfo {
+    font-size: 4vw;
+  }
+  .home .landingStar .homeStarContainer .starGlow {
+    opacity: 1;
+  }
+  .home .questionContainer {
+    padding-top: 25vh;
+    padding-bottom: 0;
+  }
+}
+
+.starPage {
   width: 100vw;
   height: 100vh;
   display: inline-block;
-  background-color: black;
   vertical-align: top;
   background-size: 100%;
-  color: white;
 }
 
-.production .whiteStarBackground {
+.starPage .starBackground {
   width: 100%;
   height: 100%;
   background-size: contain;
   background-position: center;
-  background-image: url("images/whiteConst.png"), radial-gradient(circle, #2E3143 0%, black 100%);
   opacity: 0;
   -webkit-transition: opacity 2s linear;
   transition: opacity 2s linear;
 }
 
-.production .whiteStarBackground .parallaxBackground {
+.starPage .starBackground .parallaxBackground {
   width: 100%;
   height: 100%;
   background-size: contain;
   background-position: center;
-  background-image: url("images/whiteBackgroundStars.png");
 }
 
-.production .whiteStarBackground .parallaxBackground .pageLogo {
+.starPage .starBackground .parallaxBackground .pageLogo {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
-  padding-top: 32vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.production .whiteStarBackground .parallaxBackground .pageLogo .logo {
-  width: 230px;
-}
-
-.production .whiteStarBackground .parallaxBackground .progressBar {
-  display: inline-block;
-  width: 120px;
-}
-
-.production .whiteStarBackground .parallaxBackground .progressBar .progressMarker {
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  border: 10px solid white;
-  position: relative;
-  top: -9.75px;
-  left: -9px;
-}
-
-.production .whiteStarBackground .parallaxBackground .progressBar .progress {
-  width: 100%;
-  height: 0px;
-  -webkit-transition: width linear;
-  transition: width linear;
-  border: 4px solid white;
-  border-radius: 4px;
-  position: relative;
-  top: -2px;
-}
-
-.production .whiteStarBackground .parallaxBackground .progressBar .title {
-  top: 10px;
-  position: relative;
-}
-
-.production .showStars {
+.starPage .showStars {
   opacity: 1;
 }
 
-.musicStars {
-  height: 0;
+.production {
+  background-color: black;
+  color: white;
 }
 
-.musicStars .musicStar {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  position: absolute;
+.production .starBackground {
+  background-image: url("images/whiteConst.png"), radial-gradient(circle, #2E3143 0%, black 100%);
 }
 
-.musicStars .musicStar .glowContainer {
-  display: inline-block;
-  width: 45px;
-  height: 45px;
-  text-align: center;
+.production .starBackground .parallaxBackground {
+  background-image: url("images/whiteBackgroundStars.png");
 }
 
-.musicStars .musicStar .glowContainer .musicStarImage {
-  height: 45px;
+.production .starBackground .parallaxBackground .logo {
+  width: 230px;
 }
 
-.musicStars .musicStar .glowContainer .starGlow {
-  background-position: center;
-  position: relative;
-  background-size: 130%;
-  width: 137%;
-  height: 137%;
-  top: -56px;
-  left: -9px;
+.production .starBackground .parallaxBackground .progressMarker {
+  border: 10px solid white;
+}
+
+.production .starBackground .parallaxBackground .progress {
+  border: 4px solid white;
 }
 
 .musicStarWhite1 {
@@ -204,7 +208,7 @@ body {
 }
 
 .musicStarWhite3 {
-  top: 48vh;
+  top: 51vh;
   left: 29vw;
 }
 
@@ -214,7 +218,7 @@ body {
 }
 
 .musicStarWhite5 {
-  top: 36vh;
+  top: 32vh;
   left: 76vw;
 }
 
@@ -224,7 +228,7 @@ body {
 }
 
 .musicStarWhite7 {
-  top: 38vh;
+  top: 44vh;
   left: 61vw;
 }
 
@@ -240,78 +244,27 @@ body {
 
 .composition {
   background-color: white;
-  width: 100vw;
-  height: 100vh;
-  display: inline-block;
-  vertical-align: top;
-  background-size: 100%;
   color: black;
 }
 
-.composition .blackStarBackground {
-  width: 100%;
-  height: 100%;
-  background-size: contain;
-  background-position: center;
+.composition .starBackground {
   background-image: url("images/blackConst.png"), radial-gradient(circle, #B5BADC 0%, white 100%);
-  opacity: 0;
-  -webkit-transition: opacity 2s linear;
-  transition: opacity 2s linear;
 }
 
-.composition .blackStarBackground .parallaxBackground {
-  width: 100%;
-  height: 100%;
-  background-size: contain;
-  background-position: center;
+.composition .starBackground .parallaxBackground {
   background-image: url("images/blackBackgroundStars.png");
 }
 
-.composition .blackStarBackground .parallaxBackground .pageLogo {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: auto;
-  padding-top: 32vh;
-}
-
-.composition .blackStarBackground .parallaxBackground .pageLogo .logo {
+.composition .starBackground .parallaxBackground .logo {
   width: 240px;
 }
 
-.composition .blackStarBackground .parallaxBackground .progressBar {
-  display: inline-block;
-  width: 120px;
-}
-
-.composition .blackStarBackground .parallaxBackground .progressBar .progressMarker {
-  width: 0;
-  height: 0;
-  border-radius: 50%;
+.composition .starBackground .parallaxBackground .progressMarker {
   border: 10px solid black;
-  position: relative;
-  top: -9.75px;
-  left: -9px;
 }
 
-.composition .blackStarBackground .parallaxBackground .progressBar .progress {
-  width: 100%;
-  height: 0px;
-  -webkit-transition: width linear;
-  transition: width linear;
+.composition .starBackground .parallaxBackground .progress {
   border: 4px solid black;
-  border-radius: 4px;
-  position: relative;
-  top: -2px;
-}
-
-.composition .blackStarBackground .parallaxBackground .progressBar .title {
-  top: 10px;
-  position: relative;
-}
-
-.composition .showStars {
-  opacity: 1;
 }
 
 .musicStarBlack1 {
@@ -379,21 +332,215 @@ body {
   left: 227vw;
 }
 
+@media (max-width: 1250px) {
+  .musicStarWhite1 {
+    top: 40vh;
+    left: 10vw;
+  }
+  .musicStarWhite2 {
+    top: 16vh;
+    left: 55vw;
+  }
+  .musicStarWhite3 {
+    top: 58vh;
+    left: 27vw;
+  }
+  .musicStarWhite4 {
+    top: 70vh;
+    left: 77vw;
+  }
+  .musicStarWhite5 {
+    top: 31vh;
+    left: 73vw;
+  }
+  .musicStarWhite6 {
+    top: 77vh;
+    left: 14vw;
+  }
+  .musicStarWhite7 {
+    top: 56vh;
+    left: 63vw;
+  }
+  .musicStarWhite8 {
+    top: 83vh;
+    left: 53vw;
+  }
+  .musicStarWhite9 {
+    top: 22vh;
+    left: 24vw;
+  }
+  .musicStarBlack1 {
+    top: 20vh;
+    left: 220vw;
+  }
+  .musicStarBlack2 {
+    top: 14vh;
+    left: 280vw;
+  }
+  .musicStarBlack3 {
+    top: 53vh;
+    left: 223vw;
+  }
+  .musicStarBlack4 {
+    top: 81vh;
+    left: 252vw;
+  }
+  .musicStarBlack5 {
+    top: 34vh;
+    left: 280vw;
+  }
+  .musicStarBlack6 {
+    top: 70vh;
+    left: 218vw;
+  }
+  .musicStarBlack7 {
+    top: 46vh;
+    left: 269vw;
+  }
+  .musicStarBlack8 {
+    top: 63vh;
+    left: 259vw;
+  }
+  .musicStarBlack9 {
+    top: 22vh;
+    left: 240vw;
+  }
+  .musicStarBlack10 {
+    top: 19vh;
+    left: 265vw;
+  }
+  .musicStarBlack11 {
+    top: 77vh;
+    left: 272vw;
+  }
+  .musicStarBlack12 {
+    top: 37vh;
+    left: 210vw;
+  }
+  .musicStarBlack13 {
+    top: 85vh;
+    left: 236vw;
+  }
+}
+
+@media (max-width: 550px) {
+  .production .starBackground .parallaxBackground .pageLogo .logo {
+    width: 35vw;
+  }
+  .composition .starBackground .parallaxBackground .pageLogo .logo {
+    width: 39vw;
+  }
+  .musicStarWhite1 {
+    top: 26vh;
+    left: 8vw;
+  }
+  .musicStarWhite2 {
+    top: 10vh;
+    left: 67vw;
+  }
+  .musicStarWhite3 {
+    top: 62vh;
+    left: 28vw;
+  }
+  .musicStarWhite4 {
+    top: 67vh;
+    left: 66vw;
+  }
+  .musicStarWhite5 {
+    top: 30vh;
+    left: 62vw;
+  }
+  .musicStarWhite6 {
+    top: 74vh;
+    left: 10vw;
+  }
+  .musicStarWhite7 {
+    top: 21vh;
+    left: 48vw;
+  }
+  .musicStarWhite8 {
+    top: 79vh;
+    left: 49vw;
+  }
+  .musicStarWhite9 {
+    top: 13vh;
+    left: 20vw;
+  }
+  .musicStarBlack1 {
+    top: 12vh;
+    left: 205vw;
+  }
+  .musicStarBlack2 {
+    top: 7vh;
+    left: 258vw;
+  }
+  .musicStarBlack3 {
+    top: 37vh;
+    left: 206vw;
+  }
+  .musicStarBlack4 {
+    top: 76vh;
+    left: 273vw;
+  }
+  .musicStarBlack5 {
+    top: 40vh;
+    left: 273vw;
+  }
+  .musicStarBlack6 {
+    top: 66vh;
+    left: 232vw;
+  }
+  .musicStarBlack7 {
+    top: 27vh;
+    left: 262vw;
+  }
+  .musicStarBlack8 {
+    top: 63vh;
+    left: 260vw;
+  }
+  .musicStarBlack9 {
+    top: 24vh;
+    left: 218vw;
+  }
+  .musicStarBlack10 {
+    top: 17vh;
+    left: 241vw;
+  }
+  .musicStarBlack11 {
+    top: 79vh;
+    left: 246vw;
+  }
+  .musicStarBlack12 {
+    top: 58vh;
+    left: 212vw;
+  }
+  .musicStarBlack13 {
+    top: 80vh;
+    left: 207vw;
+  }
+}
+
 .navbar {
   -webkit-transition: color 1s;
   transition: color 1s;
+  color: white;
+  gap: 65px;
   z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: absolute;
-  color: white;
-  gap: 65px;
   width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
+}
+
+.navbar .shadow {
+  -webkit-transition: letter-spacing 0.4s linear;
+  transition: letter-spacing 0.4s linear;
+  color: #b7b7b7;
 }
 
 .navbar .smallNav {
@@ -404,18 +551,12 @@ body {
   width: 212px;
 }
 
-.navbar .smallNav .shadow {
-  -webkit-transition: letter-spacing 1s linear;
-  transition: letter-spacing 1s linear;
-  color: #b7b7b7;
-}
-
 .navbar .smallNav:hover .shadow {
-  letter-spacing: .8px;
+  letter-spacing: 0.8px;
 }
 
 .navbar .smallNav .active {
-  letter-spacing: .8px;
+  letter-spacing: 0.8px;
 }
 
 .navbar .smallNav .text {
@@ -427,25 +568,168 @@ body {
   cursor: pointer;
   font-size: 94px;
   height: 118px;
-  width: 420px;
-}
-
-.navbar .bigNav .shadow {
-  -webkit-transition: letter-spacing 1s linear;
-  transition: letter-spacing 1s linear;
-  color: #b7b7b7;
+  width: 435px;
 }
 
 .navbar .bigNav:hover .shadow {
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
 }
 
 .navbar .bigNav .active {
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
 }
 
 .navbar .bigNav .text {
   top: -118px;
   position: relative;
+}
+
+@media (max-width: 1000px) {
+  .navbar {
+    gap: 4vw;
+  }
+  .navbar .smallNav {
+    font-size: 3vw;
+    line-height: 12vw;
+    height: 12vw;
+    width: 22vw;
+  }
+  .navbar .bigNav {
+    font-size: 9vw;
+    height: 12vh;
+    width: 42vw;
+  }
+  .navbar .bigNav:hover .shadow {
+    letter-spacing: .2vw;
+  }
+  .navbar .bigNav .active {
+    letter-spacing: .2vw;
+  }
+  .navbar .bigNav .text {
+    top: -11.3vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    gap: 0vw;
+  }
+  .navbar .bigNav {
+    height: 0;
+  }
+  .navbar .smallNav {
+    font-size: 3.75vw;
+    line-height: 12vw;
+    width: 28vw;
+  }
+  .navbar .smallNav:hover .shadow {
+    letter-spacing: .1vw;
+  }
+  .navbar .smallNav .active {
+    letter-spacing: .1vw;
+  }
+}
+
+.musicStars {
+  height: 0;
+}
+
+.musicStars .musicStar {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+}
+
+.musicStars .musicStar .glowContainer {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+}
+
+.musicStars .musicStar .glowContainer .musicStarImage {
+  height: 45px;
+}
+
+.musicStars .musicStar .glowContainer .starGlow {
+  background-position: center;
+  position: relative;
+  background-size: 130%;
+  width: 137%;
+  height: 137%;
+  top: -56px;
+  left: -9px;
+}
+
+.musicStars .musicStar .progressBar {
+  display: inline-block;
+  width: 120px;
+}
+
+.musicStars .musicStar .progressBar .progressMarker {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  position: relative;
+  top: -9.8px;
+  left: -9px;
+}
+
+.musicStars .musicStar .progressBar .progress {
+  width: 100%;
+  height: 0px;
+  -webkit-transition: width linear;
+  transition: width linear;
+  border-radius: 4px;
+  position: relative;
+  top: -2px;
+}
+
+.musicStars .musicStar .progressBar .title {
+  top: 10px;
+  position: relative;
+}
+
+@media (max-width: 450px) {
+  .musicStars .musicStar {
+    width: 45px;
+  }
+  .musicStars .musicStar .progressBar {
+    width: 75px;
+    position: relative;
+    top: 25px;
+    left: -59px;
+  }
+  .musicStars .musicStar .progressBar .progressMarker {
+    top: -7.5px;
+    border-width: 7px;
+  }
+  .musicStars .musicStar .progressBar .progress {
+    border-radius: 4px;
+    border-width: 2px;
+    top: 21px;
+  }
+  .musicStars .musicStar .progressBar .title {
+    top: -12px;
+  }
+  .musicStars .musicStar .glowContainer {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+  }
+  .musicStars .musicStar .glowContainer .musicStarImage {
+    height: 34px;
+  }
+  .musicStars .musicStar .glowContainer .starGlow {
+    background-position: center;
+    position: relative;
+    background-size: 130%;
+    width: 120%;
+    height: 120%;
+    top: -46.5px;
+    left: -5px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
