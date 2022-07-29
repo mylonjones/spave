@@ -1,4 +1,4 @@
-$shadowColor: #b7b7b7;
+$shadowColor: #dbdbdb;
 $smallSpacing: .8px;
 $bigSpacing: 2px;
 $spacingTransition: letter-spacing .4s linear;
@@ -16,6 +16,7 @@ $spacingTransition: letter-spacing .4s linear;
 
   .shadow {
     transition: $spacingTransition;
+    transition: color 1s;
     color: $shadowColor;
   }
 

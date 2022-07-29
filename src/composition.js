@@ -1,9 +1,11 @@
 import logo from './images/blackLogo.png'
 import MusicStar from './musicStar'
 
-// const url = 'https://res.cloudinary.com/dzgsesdip/video/upload/v1656525394/composition/'
+let url = process.env.REACT_APP_AIDENS_CLOUDINARY + 'COMPOSITION/'
 
-const url = 'https://res.cloudinary.com/djsqhh5qc/video/upload/v1656800397/COMPOSITION/'
+if(process.env.NODE_ENV === 'development') {
+  url = process.env.REACT_APP_MY_CLOUDINARY + 'composition/'
+}
 
 export default function Composition(props) {
 

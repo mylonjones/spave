@@ -19,7 +19,8 @@ body {
 }
 
 .home {
-  background: linear-gradient(270deg, white 1%, #7E7F9A 55%, black 100%);
+  background-image: linear-gradient(270deg, white 1%, #7E7F9A 55%, #090A0D 100%);
+
   height: 100%;
   width: 100vw;
   height: 100vh;
@@ -29,6 +30,20 @@ body {
   white-space: pre-wrap;
   vertical-align: top;
 
+  .homeContainer {
+    position: relative;
+    top: -100vh;
+  }
+
+  .peekingStars {
+    background-image: url("images/whiteBackgroundStars.png"), url("images/blackBackgroundStars.png");
+    background-repeat: repeat-y;
+    background-size: 100vw;
+    background-position: -75vw, 75vw;
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+  }
 
   .questionContainer {
 
@@ -56,6 +71,7 @@ body {
     margin: auto;
     margin-top: -50px;
     width: fit-content;
+
 
     .contactInfo {
       transition: opacity .3s linear;
@@ -100,7 +116,7 @@ body {
   transform: translateX(-100vw)
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .home {
     .landingStar {
       margin-top: 0;

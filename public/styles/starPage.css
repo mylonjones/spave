@@ -51,7 +51,7 @@
 }
 
 .production .starBackground {
-  background-image: url("images/whiteConst.png"), radial-gradient(circle, #2E3143 0%, black 100%);
+  background-image: url("images/whiteConst.png"), radial-gradient(circle, #2E3143 0%, black 65%);
 }
 
 .production .starBackground .parallaxBackground {
@@ -121,7 +121,7 @@
 }
 
 .composition .starBackground {
-  background-image: url("images/blackConst.png"), radial-gradient(circle, #B5BADC 0%, white 100%);
+  background-image: url("images/blackConst.png"), radial-gradient(circle, #B5BADC 0%, white 65%);
 }
 
 .composition .starBackground .parallaxBackground {
@@ -297,8 +297,14 @@
 }
 
 @media (max-width: 550px) {
+  .production .starBackground {
+    background-image: url("images/whiteConst.png"), radial-gradient(circle, #2E3143 0%, black 50vw);
+  }
   .production .starBackground .parallaxBackground .pageLogo .logo {
     width: 35vw;
+  }
+  .composition .starBackground {
+    background-image: url("images/blackConst.png"), radial-gradient(circle, #B5BADC 0%, white 50vw);
   }
   .composition .starBackground .parallaxBackground .pageLogo .logo {
     width: 39vw;

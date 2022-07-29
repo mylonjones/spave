@@ -6,6 +6,14 @@ export default function Navigation() {
 
     const nav = document.getElementsByClassName('navbar')[0]
 
+    const shadow = document.getElementsByClassName('shadow')
+
+    function shadowColor(color) {
+      for(let i = 0; i < shadow.length; i++) {
+        shadow[i].style.color = color
+      }
+    }
+
     let position = '-100vw'
 
     document.getElementsByClassName('showStars')[0] && document.getElementsByClassName('showStars')[0].classList.remove('showStars')
@@ -17,17 +25,20 @@ export default function Navigation() {
         document.getElementsByClassName('starBackground')[0].classList.add('showStars')
         document.getElementById('production').classList.add('active')
         nav.style.color = 'white'
+        shadowColor('#dbdbdb')
         break
       case 'APOLLOS':
         position = '-100vw'
         nav.style.color = 'white'
         document.getElementById('apollos').classList.add('active')
+        shadowColor('#dbdbdb')
         break
       case 'COMPOSITION':
         position = '-200vw'
         nav.style.color = 'black'
         document.getElementsByClassName('starBackground')[1].classList.add('showStars')
         document.getElementById('composition').classList.add('active')
+        shadowColor('#373737')
         break
       default:
         break

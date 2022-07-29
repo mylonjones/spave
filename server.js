@@ -61,6 +61,20 @@ app.get('/files', async (req, res) => {
 
 })
 
+app.get('/testLimits', async (req, res) => {
+
+  let data = {}
+
+  await cloudinary.v2.search
+    .expression('folder:PRODUCTION/*')
+    .max_results(30)
+    .execute()
+    .then(result => {
+      data = result
+    })
+    res.send(data)
+})
+
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}`)

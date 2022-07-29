@@ -47,29 +47,32 @@ export default function Home() {
 
 
   return (<div className='home' >
-    <div className='questionContainer' >
+    <div className='peekingStars' ></div>
+    <div className='homeContainer' >
+      <div className='questionContainer' >
+        <div
+          className='whoAmI'
+          onMouseEnter={handleQuestionHover}
+          onMouseLeave={handleQuestionOut}
+        >
+          {`//WHO AM I?`}
+          <span className='answer' style={{opacity: Opacity}} >
+            {'\nI AM APOLLOS\nTHIS IS MY WORK\nCLICK THE STARS\nINQUIRE.'}
+          </span>
+        </div>
+      </div>
       <div
-        className='whoAmI'
-        onMouseEnter={handleQuestionHover}
-        onMouseLeave={handleQuestionOut}
+        className='landingStar'
+        ref={starRef}
+        onClick={handleStarClick}
       >
-        {`//WHO AM I?`}
-        <span className='answer' style={{opacity: Opacity}} >
-          {'\nI AM APOLLOS\nTHIS IS MY WORK\nCLICK THE STARS\nINQUIRE.'}
-        </span>
-      </div>
-    </div>
-    <div
-      className='landingStar'
-      ref={starRef}
-      onClick={handleStarClick}
-    >
-      <div ref={star} className='homeStarContainer'>
-        <img className='homeStar' src={url} alt='star'></img>
-        <div className='starGlow' ></div>
-      </div>
-      <div ref={contactInfo} className='contactInfo' >
-        {`APOLLOSPRODUCTIONS1@GMAIL.COM\n@AIDENSTROZZI`}
+        <div ref={star} className='homeStarContainer'>
+          <img className='homeStar' src={url} alt='star'></img>
+          <div className='starGlow' ></div>
+        </div>
+        <div ref={contactInfo} className='contactInfo' >
+          {`APOLLOSPRODUCTIONS1@GMAIL.COM\n@AIDENSTROZZI`}
+        </div>
       </div>
     </div>
   </div>)

@@ -1,9 +1,11 @@
 import logo from './images/whiteLogo.png'
 import MusicStar from './musicStar'
 
-// const url = 'https://res.cloudinary.com/dzgsesdip/video/upload/v1656525394/production/'
+let url = process.env.REACT_APP_AIDENS_CLOUDINARY + 'PRODUCTION/'
 
-const url = 'https://res.cloudinary.com/djsqhh5qc/video/upload/v1656800397/PRODUCTION/'
+if(process.env.NODE_ENV === 'development') {
+  url = process.env.REACT_APP_MY_CLOUDINARY + 'production/'
+}
 
 export default function Production(props) {
 
