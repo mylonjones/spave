@@ -19,6 +19,7 @@ export default function Navigation() {
     document.getElementsByClassName('showStars')[0] && document.getElementsByClassName('showStars')[0].classList.remove('showStars')
     document.getElementsByClassName('active')[0].classList.remove('active')
 
+
     switch(e.target.innerHTML) {
       case 'PRODUCTION':
         position = '0'
@@ -40,11 +41,11 @@ export default function Navigation() {
         document.getElementById('composition').classList.add('active')
         shadowColor('#373737')
         break
-      default:
-        break
-    }
-    pages.style.transform = `translateX(${position})`
-  }
+        default:
+          break
+        }
+        pages.style.transform = `translateX(${position})`
+      }
 
   return(<div className='navbar' >
     <div
