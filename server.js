@@ -1,7 +1,8 @@
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 4000
-const path = require('path');
+const path = require('path')
+const axios = require('axios')
 
 const cloudinary = require('cloudinary')
 
@@ -79,3 +80,15 @@ app.get('/testLimits', async (req, res) => {
 app.listen(port, () => {
   console.log(`App listening on port ${port}`)
 })
+
+let requestToHeroku = () => {
+  setTimeout(() => {
+    axios('http://www.apollosproductions.com')
+      .then((res) => {
+        console.log(res)
+      })
+      requestToHeroku()
+  }, 300000);
+}
+
+requestToHeroku()
