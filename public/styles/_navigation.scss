@@ -55,7 +55,7 @@ $spacingTransition: letter-spacing .4s linear;
     }
 
     .text {
-      top: -118px;
+      top: -100%;
       position: relative;
     }
   }
@@ -73,7 +73,8 @@ $spacingTransition: letter-spacing .4s linear;
 
     .bigNav {
       font-size: 9vw;
-      height: 12vh;
+      height: 12vw;
+      line-height: 12vw;
       width: 42vw;
 
       &:hover .shadow {
@@ -83,10 +84,6 @@ $spacingTransition: letter-spacing .4s linear;
       .active {
         letter-spacing: .2vw;
       }
-
-      .text {
-        top: -11.3vw;
-      }
     }
   }
 }
@@ -94,9 +91,6 @@ $spacingTransition: letter-spacing .4s linear;
 @media (max-width: 800px) {
   .navbar {
     gap: 0vw;
-    .bigNav {
-      height: 0;
-    }
     .smallNav {
       font-size: 3.75vw;
       line-height: 12vw;

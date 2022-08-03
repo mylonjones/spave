@@ -1,4 +1,7 @@
 
+$homeStarDesktop: 80px;
+$homeStarMobile: 50px;
+
 @font-face {
   font-family: trender;
   src: url(./Trender.ttf);
@@ -52,42 +55,40 @@ body {
   .questionContainer {
 
     //vertical positions
-    padding-top: 320px;
-    padding-bottom: 55px;
+    padding-top: 30vh;
 
-    width: 15rem;
-    height: 15rem;
+    width: fit-content;
     margin: auto;
 
     .whoAmI {
-      width: 240px;
+      white-space: pre;
       padding-left: 37px;
       transition: padding-left .5s linear;
       &:hover {
         padding-left: 22px;
       }
-
     }
   }
 
   .landingStar {
     text-align: center;
     margin: auto;
-    margin-top: -50px;
+    margin-top: 13vh;
     width: fit-content;
-    height: 0;
+    height: $homeStarDesktop;
 
 
     .contactInfo {
       transition: opacity .3s linear;
       position: relative;
       opacity: 0;
-      top: -70px;
+      top: -93%;
     }
     .homeStarContainer {
       transition: opacity .3s linear;
-      width: 80px;
-      height: 80px;
+      width: $homeStarDesktop;
+      height: $homeStarDesktop;
+      line-height: 100%;
       margin: auto;
 
       .starGlow {
@@ -99,7 +100,7 @@ body {
         width: 100%;
         height: 100%;
         position: relative;
-        top: -84px;
+        top: -101%;
         z-index: 1;
         &:hover {
           opacity: 1;
@@ -109,7 +110,7 @@ body {
 
     }
     .homeStar {
-      height: 80px;
+      height: 100%;
       cursor: pointer;
     }
   }
@@ -124,13 +125,16 @@ body {
 @media (max-width: 500px) {
   .home {
     .landingStar {
-      margin-top: 0;
+      margin-top: 13vh;
       width: auto;
+      height: $homeStarMobile;
 
       .contactInfo {
         font-size: 4vw;
       }
       .homeStarContainer {
+        height: $homeStarMobile;
+        width: $homeStarMobile;
         .starGlow {
           opacity: 1;
         }
@@ -138,9 +142,14 @@ body {
     }
 
     .questionContainer {
-
       padding-top: 25vh;
-      padding-bottom: 0;
+      .whoAmI {
+        padding-left: 39px;
+        font-size: 22px;
+        &:hover {
+          padding-left: 15px;
+        }
+      }
     }
   }
 }

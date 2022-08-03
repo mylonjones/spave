@@ -85,7 +85,6 @@ let requestToHeroku = () => {
   setTimeout(() => {
     axios('http://www.apollosproductions.com')
       .then((res) => {
-        console.log(res)
       })
       requestToHeroku()
   }, 300000);
