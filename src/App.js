@@ -124,12 +124,12 @@ function App() {
       let starParallaxY = (e.pageY / -90)
       let constParallaxX = (e.pageX / -180)
       let constParallaxY = (e.pageY / -180)
-      let offset = window.innerWidth * .75
+      let offset = window.innerWidth * .80
       document.getElementsByClassName('parallaxBackground')[0].style.backgroundPosition = `${starParallaxX}px ${starParallaxY}px`
       document.getElementsByClassName('parallaxBackground')[1].style.backgroundPosition = `${starParallaxX}px ${starParallaxY}px`
       document.getElementsByClassName('starBackground')[0].style.backgroundPosition = `${constParallaxX}px ${constParallaxY}px`
       document.getElementsByClassName('starBackground')[1].style.backgroundPosition = `${constParallaxX}px ${constParallaxY}px`
-      document.getElementsByClassName('peekingStars')[0].style.backgroundPosition = `${starParallaxX - offset}px ${starParallaxY}px, ${starParallaxX + offset}px ${starParallaxY}px`
+      document.getElementsByClassName('peekingStars')[0].style.backgroundPosition = `right ${offset - starParallaxX - (window.innerWidth / 50)}px top ${starParallaxY}px, left ${starParallaxX + offset + (window.innerWidth / 50)}px top ${starParallaxY}px`
     }
   }
 

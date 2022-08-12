@@ -23,8 +23,8 @@ body {
 }
 
 .home {
-  background-image: -webkit-gradient(linear, right top, left top, color-stop(1%, white), color-stop(55%, #7E7F9A), to(#090A0D));
-  background-image: linear-gradient(270deg, white 1%, #7E7F9A 55%, #090A0D 100%);
+  background-image: -webkit-gradient(linear, right top, left top, color-stop(1%, white), color-stop(55%, #7E7F9A), to(black));
+  background-image: linear-gradient(270deg, white 1%, #7E7F9A 55%, black 100%);
   height: 100%;
   width: 100vw;
   height: 100vh;
@@ -43,8 +43,8 @@ body {
 .home .peekingStars {
   background-image: url("images/whiteBackgroundStars.png"), url("images/blackBackgroundStars.png");
   background-repeat: repeat-y;
-  background-size: 100vw;
-  background-position: -75vw, 75vw;
+  background-size: 100vh;
+  background-position: right 76vw top 0, left 80vw top 0;
   height: 100%;
   width: 100%;
   opacity: 0.4;
