@@ -155,7 +155,7 @@ export default function MusicStar(props) {
     function fadeOut() {
       setFading(true)
       let fadeInInverval = setInterval(() => {
-        if(player.volume > 0.0) {
+        if(player.volume >= 0.1) {
           player.volume -= 0.1
         } else {
           setFading(false)
