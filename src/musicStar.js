@@ -180,10 +180,16 @@ export default function MusicStar(props) {
   }
 
   function handleProgressMouseMove(e) {
+    let compensation = 0
+    if(props.color === 'black'){
+      compensation = 2 * window.innerWidth
+    }
+
     let left = parseInt(getComputedStyle(document.getElementsByClassName(uniqueClass)[0]).left)
+    console.log(`progress${uniqueClass}`)
     let width = document.getElementsByClassName(`progress${uniqueClass}`)[0].offsetWidth
-    if(left + width > e.clientX - 45 && left < e.clientX - 45) {
-      let position = e.clientX - left - 60 + 'px'
+    if(left + width - compensation > e.clientX - 45 && left - compensation < e.clientX - 45) {
+      let position = compensation + e.clientX - left - 60 + 'px'
       var progress = document.getElementsByClassName(`progressMarker${uniqueClass}`)[0]
       progress.style.left = position
     }
