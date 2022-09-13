@@ -33,7 +33,7 @@ export default function MusicStar(props) {
   const progressBar = useRef()
 
 
-
+  let [fading, setFading] = useState(false)
   let [playing, setPlaying] = useState(false)
   let [showProgress, setShowProgress] = useState(0)
   let [loadSong, setLoad] = useState(false)
@@ -85,6 +85,13 @@ export default function MusicStar(props) {
   }
   useOutsideAlerter(starRef)
 
+  useEffect(() => {
+    if(loadSong) {
+      let player = document.getElementById(uniqueClass + props.name)
+      player.volume = 0
+    }
+  }, [uniqueClass, props.name, loadSong])
+
 
   function handleStarHover() {
     !playing && show('play')
@@ -118,17 +125,49 @@ export default function MusicStar(props) {
   }
 
   function handleTimeUpdate(e) {
+    var player = e.target
+    var currentTime = player.currentTime;
+    var duration = player.duration;
+
     if(playing && !hovering) {
-      var player = e.target
-      var currentTime = player.currentTime;
-      var duration = player.duration;
       let width = progressBar.current.offsetWidth
       if(currentTime === duration) {
         setPlaying(false)
         show('play')
       }
-      var progress = document.getElementsByClassName('progressMarker')[0]
+      var progress = document.getElementsByClassName(`progressMarker${uniqueClass}`)[0]
       progress.style.left = (currentTime +.25)/duration*width-9+'px'
+    }
+
+    function fadeIn() {
+      setFading(true)
+      player.volume = 0
+      let fadeInInverval = setInterval(() => {
+        if(player.volume < .99) {
+          player.volume += 0.1
+        } else {
+          setFading(false)
+          clearInterval(fadeInInverval)
+        }
+      }, 100);
+    }
+
+    function fadeOut() {
+      setFading(true)
+      let fadeInInverval = setInterval(() => {
+        if(player.volume > 0.0) {
+          player.volume -= 0.1
+        } else {
+          setFading(false)
+          clearInterval(fadeInInverval)
+        }
+      }, 100);
+    }
+
+    if(!fading && currentTime < 1) {
+      fadeIn()
+    } else if(!fading && currentTime > duration - 1) {
+      fadeOut()
     }
   }
 
@@ -142,10 +181,10 @@ export default function MusicStar(props) {
 
   function handleProgressMouseMove(e) {
     let left = parseInt(getComputedStyle(document.getElementsByClassName(uniqueClass)[0]).left)
-    let width = document.getElementsByClassName('progress')[0].offsetWidth
+    let width = document.getElementsByClassName(`progress${uniqueClass}`)[0].offsetWidth
     if(left + width > e.clientX - 45 && left < e.clientX - 45) {
       let position = e.clientX - left - 60 + 'px'
-      var progress = document.getElementsByClassName('progressMarker')[0]
+      var progress = document.getElementsByClassName(`progressMarker${uniqueClass}`)[0]
       progress.style.left = position
     }
   }
@@ -153,7 +192,7 @@ export default function MusicStar(props) {
   function handleProgressClick(e) {
     e.stopPropagation()
     let player = document.getElementById(uniqueClass + props.name)
-    let position = (e.clientX - document.getElementsByClassName('progress')[0].getBoundingClientRect().left) / document.getElementsByClassName('progress')[0].offsetWidth
+    let position = (e.clientX - document.getElementsByClassName(`progress${uniqueClass}`)[0].getBoundingClientRect().left) / document.getElementsByClassName(`progress${uniqueClass}`)[0].offsetWidth
     let duration = player.duration
     player.currentTime = duration * position
     setHovering(false)
@@ -186,13 +225,13 @@ export default function MusicStar(props) {
       ref={progressBar}
       >
         <div
-          className='progress'
+          className={`progress progress${uniqueClass}`}
           onClick={handleProgressClick}
           onMouseEnter={handleProgressHover}
           onMouseLeave={handleProgressExit}
           onMouseMove={handleProgressMouseMove}
           style={{opacity: showProgress}}>
-          <div className='progressMarker' >
+          <div className={`progressMarker progressMarker${uniqueClass}`} >
           </div>
         </div>
         <div className='title'
@@ -201,6 +240,7 @@ export default function MusicStar(props) {
 
       {loadSong && <audio id={uniqueClass + props.name} onTimeUpdate={handleTimeUpdate} >
         <source src={props.sound} type="audio/wav"/>
+        {}
       </audio>}
     </div>)
 }
