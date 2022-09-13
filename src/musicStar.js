@@ -34,14 +34,34 @@ export default function MusicStar(props) {
 
 
 
-  let [url, setUrl] = useState(imports[props.color + 'Star'])
   let [playing, setPlaying] = useState(false)
-  let [showProgress, setShowProgress] = useState('none')
+  let [showProgress, setShowProgress] = useState(0)
   let [loadSong, setLoad] = useState(false)
   let [hovering, setHovering] = useState(false)
   let [touches, setTouches] = useState(0)
+  let [imageOpacities, setOpacities] = useState({ star: 1, play: 0, pause:0 })
+  let [titleOpacity, setTitle] = useState(0)
+
 
   const uniqueClass = 'musicStar' + props.number
+
+  function show(img) {
+
+    let opacities = {star: 1, play: 0, pause: 0}
+
+    switch(img) {
+      case 'play':
+        opacities = {star: 0, play: 1, pause: 0}
+        break;
+      case 'pause':
+        opacities = {star: 0, play: 0, pause: 1}
+        break;
+      default:
+        opacities = {star: 1, play: 0, pause: 0}
+    }
+
+    setOpacities(opacities)
+  }
 
   function useOutsideAlerter(ref) {
     useEffect(() => {
@@ -49,9 +69,10 @@ export default function MusicStar(props) {
 
         if (loadSong && ref.current && !ref.current.contains(event.target)) {
           setTouches(0)
-          setUrl(imports[props.color + 'Star'])
+          show('star')
+          setTitle(0)
           setPlaying(false)
-          setShowProgress('none')
+          setShowProgress(0)
           document.getElementById(uniqueClass + props.name).pause()
         }
       }
@@ -66,13 +87,15 @@ export default function MusicStar(props) {
 
 
   function handleStarHover() {
-    !playing && setUrl(imports[props.color + 'Play'])
+    !playing && show('play')
+    setTitle(1)
     setLoad(true)
   }
 
   function handleStarOut() {
-    !playing && setShowProgress('none')
-    !playing && setUrl(imports[props.color + 'Star'])
+    !playing && setShowProgress(0)
+    !playing && show('star')
+    !playing && setTitle(0)
   }
 
   function handleTouch (e) {
@@ -82,12 +105,12 @@ export default function MusicStar(props) {
   function handleStarClick() {
     if(touches !== 1) {
       if(playing) {
-        setUrl(imports[props.color + 'Play'])
+        show('play')
         setPlaying(false)
         document.getElementById(uniqueClass + props.name).pause()
       } else {
-        setUrl(imports[props.color + 'Pause'])
-        setShowProgress('block')
+        show('pause')
+        setShowProgress(1)
         setPlaying(true)
         document.getElementById(uniqueClass + props.name).play()
       }
@@ -102,7 +125,7 @@ export default function MusicStar(props) {
       let width = progressBar.current.offsetWidth
       if(currentTime === duration) {
         setPlaying(false)
-        setUrl(imports[props.color + 'Play'])
+        show('play')
       }
       var progress = document.getElementsByClassName('progressMarker')[0]
       progress.style.left = (currentTime +.25)/duration*width-9+'px'
@@ -145,10 +168,21 @@ export default function MusicStar(props) {
     onTouchStart={handleTouch}
     >
       <div className='glowContainer' >
-        <img className='musicStarImage' src={url} alt='musicPlayer' ></img>
+        <img className='musicStarImage'
+             src={imports[props.color + 'Star']}
+             style={{opacity: imageOpacities.star}}
+             alt='musicPlayer' ></img>
+        <img className='musicStarImage imgLayer'
+             style={{opacity: imageOpacities.play}}
+             src={imports[props.color + 'Play']}
+             alt='musicPlayer' ></img>
+        <img className='musicStarImage imgLayer'
+             style={{opacity: imageOpacities.pause}}
+             src={imports[props.color + 'Pause']}
+             alt='musicPlayer' ></img>
         <div className='starGlow' style={{ backgroundImage: `url(${imports[props.color + 'Glow']})` }} ></div>
       </div>
-      {url !== imports[props.color + 'Star'] && (<div className='progressBar'
+      <div className='progressBar'
       ref={progressBar}
       >
         <div
@@ -157,12 +191,13 @@ export default function MusicStar(props) {
           onMouseEnter={handleProgressHover}
           onMouseLeave={handleProgressExit}
           onMouseMove={handleProgressMouseMove}
-          style={{display: showProgress}}>
+          style={{opacity: showProgress}}>
           <div className='progressMarker' >
           </div>
         </div>
-        <div className='title' >{props.name}</div>
-      </div>)}
+        <div className='title'
+             style={{opacity: titleOpacity}}>{props.name}</div>
+      </div>
 
       {loadSong && <audio id={uniqueClass + props.name} onTimeUpdate={handleTimeUpdate} >
         <source src={props.sound} type="audio/wav"/>

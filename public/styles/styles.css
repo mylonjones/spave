@@ -683,6 +683,13 @@ body {
 
 .musicStars .musicStar .glowContainer .musicStarImage {
   height: 45px;
+  -webkit-transition: opacity .3s linear;
+  transition: opacity .3s linear;
+}
+
+.musicStars .musicStar .glowContainer .imgLayer {
+  position: absolute;
+  left: 3px;
 }
 
 .musicStars .musicStar .glowContainer .starGlow {
@@ -712,14 +719,16 @@ body {
 .musicStars .musicStar .progressBar .progress {
   width: 100%;
   height: 0px;
-  -webkit-transition: width linear;
-  transition: width linear;
+  -webkit-transition: width linear, opacity .3s linear;
+  transition: width linear, opacity .3s linear;
   border-radius: 4px;
   position: relative;
   top: -2px;
 }
 
 .musicStars .musicStar .progressBar .title {
+  -webkit-transition: opacity .3s linear;
+  transition: opacity .3s linear;
   top: 10px;
   position: relative;
 }
