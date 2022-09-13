@@ -764,6 +764,10 @@ body {
   .musicStars .musicStar .glowContainer .musicStarImage {
     height: 34px;
   }
+  .musicStars .musicStar .glowContainer .imgLayer {
+    position: absolute;
+    left: 8px;
+  }
   .musicStars .musicStar .glowContainer .starGlow {
     background-position: center;
     position: relative;
