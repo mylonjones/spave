@@ -49,7 +49,7 @@ app.get('/files', async (req, res) => {
       result = result.resources.map(song => {
 
         let name = song.filename.slice(0, song.filename.length - 7)
-        name = name.replace('_', ' ')
+        name = name.replace(/_/g, ' ')
         let file = song.filename + '.wav'
         return {name, file}
       })
