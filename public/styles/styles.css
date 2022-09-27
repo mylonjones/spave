@@ -713,7 +713,7 @@ body {
   border-radius: 50%;
   position: relative;
   top: -9.8px;
-  left: -9px;
+  left: -14px;
 }
 
 .musicStars .musicStar .progressBar .progress {
@@ -731,6 +731,10 @@ body {
   transition: opacity .3s linear;
   top: 10px;
   position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 @media (max-width: 450px) {

@@ -41,7 +41,7 @@
         border-radius: 50%;
         position: relative;
         top: -9.8px;
-        left: -9px
+        left: -14px
       }
       .progress {
         width: 100%;
@@ -55,6 +55,7 @@
         transition: opacity .3s linear;
         top: 10px;
         position: relative;
+        user-select: none;
       }
     }
   }
