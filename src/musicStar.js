@@ -94,6 +94,11 @@ export default function MusicStar(props) {
     }
   }, [loadSong])
 
+  function getBorderRadi() {
+    let bar = parseInt(window.getComputedStyle(progressBar.current).borderWidth)
+    let marker = parseInt(window.getComputedStyle(progressMarker.current).borderWidth)
+    return bar + marker
+  }
 
   function handleStarHover() {
     !playing && show('play')
@@ -132,7 +137,7 @@ export default function MusicStar(props) {
 
     if(playing && !mouseDown) {
       let width = progressBar.current.offsetWidth
-      progressMarker.current.style.left = currentTime * width / duration - 14 + 'px'
+      progressMarker.current.style.left = currentTime * width / duration - getBorderRadi() + 'px'
       if(currentTime === duration) {
         setPlaying(false)
         show('play')
@@ -172,13 +177,16 @@ export default function MusicStar(props) {
 
 
 
+
+
   function handleProgressMouseMove(e) {
 
     if(mouseDown) {
+
       setXposition(e.clientX || e.touches[0].clientX)
-      let relativeX = Xposition - progressBar.current.getBoundingClientRect().left
+      let relativeX = (e.clientX || e.touches[0].clientX) - progressBar.current.getBoundingClientRect().left
       if(progressBar.current.offsetWidth > relativeX && 0 < relativeX) {
-        e.target.style.left = relativeX - 14 + 'px'
+        progressMarker.current.style.left = relativeX - getBorderRadi() + 'px'
         //4 for radius of progress bar and 10 for radius of progress marker
       }
     }
@@ -186,7 +194,7 @@ export default function MusicStar(props) {
 
   function handleProgressClick(e) {
     e.stopPropagation()
-    let position = Xposition - e.currentTarget.getBoundingClientRect().left
+    let position = (e.clientX || Xposition) - e.currentTarget.getBoundingClientRect().left
     let width = e.currentTarget.offsetWidth
     player.current.currentTime = player.current.duration * position / width
     setMouseDown(false)

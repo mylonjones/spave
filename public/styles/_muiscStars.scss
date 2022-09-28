@@ -5,7 +5,7 @@
   .musicStar {
     width: fit-content;
     position: absolute;
-
+    user-select: none;
 
     .glowContainer {
       display:inline-block;
@@ -38,9 +38,9 @@
       .progressMarker {
         width: 0;
         height: 0;
-        border-radius: 50%;
+        border-radius: 10px;
         position: relative;
-        top: -9.8px;
+        top: -10px;
         left: -14px
       }
       .progress {
@@ -55,7 +55,7 @@
         transition: opacity .3s linear;
         top: 10px;
         position: relative;
-        user-select: none;
+
       }
     }
   }

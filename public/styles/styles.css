@@ -672,6 +672,10 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   position: absolute;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .musicStars .musicStar .glowContainer {
@@ -710,9 +714,9 @@ body {
 .musicStars .musicStar .progressBar .progressMarker {
   width: 0;
   height: 0;
-  border-radius: 50%;
+  border-radius: 10px;
   position: relative;
-  top: -9.8px;
+  top: -10px;
   left: -14px;
 }
 
@@ -731,10 +735,6 @@ body {
   transition: opacity .3s linear;
   top: 10px;
   position: relative;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 
 @media (max-width: 450px) {
