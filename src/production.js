@@ -10,7 +10,7 @@ if(process.env.NODE_ENV === 'development') {
 export default function Production(props) {
 
   let songs = []
-  let songLimit = 9
+  let songLimit = 10
 
   for(let i = 1; i <= songLimit; i++) {
     let index = props.songs.length - i

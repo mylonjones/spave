@@ -44,6 +44,7 @@ export default function MusicStar(props) {
   let [imageOpacities, setOpacities] = useState({ star: 1, play: 0, pause:0 })
   let [titleOpacity, setTitle] = useState(0)
   let [Xposition, setXposition] = useState(0)
+  let [loading, setLoading] = useState(true)
 
 
   const uniqueClass = 'musicStar' + props.number
@@ -187,7 +188,6 @@ export default function MusicStar(props) {
       let relativeX = (e.clientX || e.touches[0].clientX) - progressBar.current.getBoundingClientRect().left
       if(progressBar.current.offsetWidth > relativeX && 0 < relativeX) {
         progressMarker.current.style.left = relativeX - getBorderRadi() + 'px'
-        //4 for radius of progress bar and 10 for radius of progress marker
       }
     }
   }
@@ -198,6 +198,10 @@ export default function MusicStar(props) {
     let width = e.currentTarget.offsetWidth
     player.current.currentTime = player.current.duration * position / width
     setMouseDown(false)
+  }
+
+  function loaded() {
+    setLoading(false)
   }
 
   return(<div
@@ -240,12 +244,13 @@ export default function MusicStar(props) {
           </div>
         </div>
         <div className='title'
-             style={{opacity: titleOpacity}}>{props.name}</div>
+             style={{opacity: titleOpacity}}>{loading ? 'Loading...': props.name}</div>
       </div>
 
       {loadSong && <audio
         className='player'
         ref={player}
+        onCanPlayThrough={loaded}
         onTimeUpdate={handleTimeUpdate} >
         <source src={props.sound} type="audio/wav"/>
       </audio>}

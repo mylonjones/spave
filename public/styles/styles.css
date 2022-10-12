@@ -274,6 +274,11 @@ body {
   left: 24vw;
 }
 
+.musicStarWhite10 {
+  top: 60vh;
+  left: 10vw;
+}
+
 .composition {
   background-color: white;
   color: black;
@@ -401,6 +406,10 @@ body {
     top: 22vh;
     left: 24vw;
   }
+  .musicStarWhite10 {
+    top: 73vh;
+    left: 33vw;
+  }
   .musicStarBlack1 {
     top: 20vh;
     left: 220vw;
@@ -503,6 +512,10 @@ body {
   .musicStarWhite9 {
     top: 13vh;
     left: 20vw;
+  }
+  .musicStarWhite10 {
+    top: 45vh;
+    left: 12vw;
   }
   .musicStarBlack1 {
     top: 12vh;
