@@ -21,7 +21,7 @@ cloudinary.config({
 
 app.use(express.static(path.join(__dirname, '/build')));
 
-//lets encrypt stuff
+//lets encrypt request responder
 if (process.env.LE_URL && process.env.LE_CONTENT) {
   app.get(process.env.LE_URL, function(req, res) {
     return res.send(process.env.LE_CONTENT)
