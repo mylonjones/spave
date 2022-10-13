@@ -21,6 +21,13 @@ cloudinary.config({
 
 app.use(express.static(path.join(__dirname, '/build')));
 
+//lets encrypt stuff
+if (process.env.LE_URL && process.env.LE_CONTENT) {
+  app.get(process.env.LE_URL, function(req, res) {
+    return res.send(process.env.LE_CONTENT)
+  });
+}
+
 app.get('/files', async (req, res) => {
 
   let data = {}
