@@ -101,10 +101,18 @@ export default function MusicStar(props) {
     return bar + marker
   }
 
+  function checkLoadStatus() {
+    if(player.current.readyState === 0) {
+      player.current.load()
+    }
+  }
+
   function handleStarHover() {
     !playing && show('play')
     setTitle(1)
+    checkLoadStatus()
     setLoad(true)
+
   }
 
   function handleStarOut() {
@@ -247,7 +255,7 @@ export default function MusicStar(props) {
              style={{opacity: titleOpacity}}>{loading ? 'Loading...': props.name}</div>
       </div>
 
-      {loadSong && <audio
+      {<audio
         className='player'
         ref={player}
         onCanPlayThrough={loaded}
