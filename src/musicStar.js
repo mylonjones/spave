@@ -104,6 +104,9 @@ export default function MusicStar(props) {
   function checkLoadStatus() {
     if(player.current.readyState === 0) {
       player.current.load()
+      setTimeout(checkLoadStatus, 2000)
+    } else {
+      setLoading(false)
     }
   }
 
@@ -258,7 +261,7 @@ export default function MusicStar(props) {
       {<audio
         className='player'
         ref={player}
-        onCanPlayThrough={loaded}
+        // onCanPlayThrough={loaded}
         onTimeUpdate={handleTimeUpdate} >
         <source src={props.sound} type="audio/wav"/>
       </audio>}
