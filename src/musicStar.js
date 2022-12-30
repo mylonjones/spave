@@ -211,10 +211,6 @@ export default function MusicStar(props) {
     setMouseDown(false)
   }
 
-  function loaded() {
-    setLoading(false)
-  }
-
   return(<div
     ref={starRef}
     className={`musicStar ${uniqueClass}`}>
@@ -261,7 +257,6 @@ export default function MusicStar(props) {
       {<audio
         className='player'
         ref={player}
-        // onCanPlayThrough={loaded}
         onTimeUpdate={handleTimeUpdate} >
         <source src={props.sound} type="audio/wav"/>
       </audio>}
