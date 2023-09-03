@@ -5,7 +5,11 @@
 
 body {
   font-family: trender;
+  width: 100%;
+  height: 110%;
   margin: 0;
+  background-color: black;
+  position: fixed;
 }
 
 .app {
@@ -19,8 +23,8 @@ body {
 }
 
 .home {
-  background: -webkit-gradient(linear, right top, left top, color-stop(1%, white), color-stop(55%, #7E7F9A), to(#090A0D));
-  background: linear-gradient(270deg, white 1%, #7E7F9A 55%, #090A0D 100%);
+  background-image: -webkit-gradient(linear, right top, left top, color-stop(1%, white), color-stop(55%, #7E7F9A), to(black));
+  background-image: linear-gradient(270deg, white 1%, #7E7F9A 55%, black 100%);
   height: 100%;
   width: 100vw;
   height: 100vh;
@@ -31,16 +35,31 @@ body {
   vertical-align: top;
 }
 
+.home .homeContainer {
+  position: relative;
+  top: -100vh;
+}
+
+.home .peekingStars {
+  background-image: url("images/whiteBackgroundStars.png"), url("images/blackBackgroundStars.png");
+  background-repeat: repeat-y;
+  background-size: 100vh;
+  background-position: right 76vw top 0, left 80vw top 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.4;
+}
+
 .home .questionContainer {
-  padding-top: 320px;
-  padding-bottom: 55px;
-  width: 15rem;
-  height: 15rem;
+  padding-top: 30vh;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   margin: auto;
 }
 
 .home .questionContainer .whoAmI {
-  width: 240px;
+  white-space: pre;
   padding-left: 37px;
   -webkit-transition: padding-left .5s linear;
   transition: padding-left .5s linear;
@@ -53,10 +72,11 @@ body {
 .home .landingStar {
   text-align: center;
   margin: auto;
-  margin-top: -50px;
+  margin-top: 13vh;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  height: 80px;
 }
 
 .home .landingStar .contactInfo {
@@ -64,7 +84,7 @@ body {
   transition: opacity .3s linear;
   position: relative;
   opacity: 0;
-  top: -70px;
+  top: -93%;
 }
 
 .home .landingStar .homeStarContainer {
@@ -72,6 +92,7 @@ body {
   transition: opacity .3s linear;
   width: 80px;
   height: 80px;
+  line-height: 100%;
   margin: auto;
 }
 
@@ -85,7 +106,7 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
-  top: -84px;
+  top: -101%;
   z-index: 1;
 }
 
@@ -94,7 +115,7 @@ body {
 }
 
 .home .landingStar .homeStar {
-  height: 80px;
+  height: 100%;
   cursor: pointer;
 }
 
@@ -110,18 +131,29 @@ body {
 
 @media (max-width: 500px) {
   .home .landingStar {
-    margin-top: 0;
+    margin-top: 13vh;
     width: auto;
+    height: 50px;
   }
   .home .landingStar .contactInfo {
     font-size: 4vw;
+  }
+  .home .landingStar .homeStarContainer {
+    height: 50px;
+    width: 50px;
   }
   .home .landingStar .homeStarContainer .starGlow {
     opacity: 1;
   }
   .home .questionContainer {
     padding-top: 25vh;
-    padding-bottom: 0;
+  }
+  .home .questionContainer .whoAmI {
+    padding-left: 39px;
+    font-size: 22px;
+  }
+  .home .questionContainer .whoAmI:hover {
+    padding-left: 15px;
   }
 }
 
@@ -178,7 +210,7 @@ body {
 }
 
 .production .starBackground {
-  background-image: url("images/whiteConst.png"), radial-gradient(circle, #2E3143 0%, black 100%);
+  background-image: url("images/whiteConst.png"), radial-gradient(circle, #2E3143 0%, black 65%);
 }
 
 .production .starBackground .parallaxBackground {
@@ -240,6 +272,11 @@ body {
 .musicStarWhite9 {
   top: 22vh;
   left: 24vw;
+}
+
+.musicStarWhite10 {
+  top: 60vh;
+  left: 10vw;
 }
 
 .composition {
@@ -369,6 +406,10 @@ body {
     top: 22vh;
     left: 24vw;
   }
+  .musicStarWhite10 {
+    top: 73vh;
+    left: 33vw;
+  }
   .musicStarBlack1 {
     top: 20vh;
     left: 220vw;
@@ -424,8 +465,14 @@ body {
 }
 
 @media (max-width: 550px) {
+  .production .starBackground {
+    background-image: url("images/whiteConst.png"), radial-gradient(circle, #2E3143 0%, black 50vw);
+  }
   .production .starBackground .parallaxBackground .pageLogo .logo {
     width: 35vw;
+  }
+  .composition .starBackground {
+    background-image: url("images/blackConst.png"), radial-gradient(circle, #B5BADC 0%, white 50vw);
   }
   .composition .starBackground .parallaxBackground .pageLogo .logo {
     width: 39vw;
@@ -465,6 +512,10 @@ body {
   .musicStarWhite9 {
     top: 13vh;
     left: 20vw;
+  }
+  .musicStarWhite10 {
+    top: 45vh;
+    left: 12vw;
   }
   .musicStarBlack1 {
     top: 12vh;
@@ -538,10 +589,8 @@ body {
 }
 
 .navbar .shadow {
-  -webkit-transition: letter-spacing 0.4s linear;
-  transition: letter-spacing 0.4s linear;
-  -webkit-transition: color 1s;
-  transition: color 1s;
+  -webkit-transition: letter-spacing 0.4s linear, color 1s;
+  transition: letter-spacing 0.4s linear, color 1s;
   color: #dbdbdb;
 }
 
@@ -582,7 +631,7 @@ body {
 }
 
 .navbar .bigNav .text {
-  top: -118px;
+  top: -100%;
   position: relative;
 }
 
@@ -598,7 +647,8 @@ body {
   }
   .navbar .bigNav {
     font-size: 9vw;
-    height: 12vh;
+    height: 12vw;
+    line-height: 12vw;
     width: 42vw;
   }
   .navbar .bigNav:hover .shadow {
@@ -607,17 +657,11 @@ body {
   .navbar .bigNav .active {
     letter-spacing: .2vw;
   }
-  .navbar .bigNav .text {
-    top: -11.3vw;
-  }
 }
 
 @media (max-width: 800px) {
   .navbar {
     gap: 0vw;
-  }
-  .navbar .bigNav {
-    height: 0;
   }
   .navbar .smallNav {
     font-size: 3.75vw;
@@ -641,6 +685,10 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   position: absolute;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .musicStars .musicStar .glowContainer {
@@ -652,6 +700,13 @@ body {
 
 .musicStars .musicStar .glowContainer .musicStarImage {
   height: 45px;
+  -webkit-transition: opacity .3s linear;
+  transition: opacity .3s linear;
+}
+
+.musicStars .musicStar .glowContainer .imgLayer {
+  position: absolute;
+  left: 3px;
 }
 
 .musicStars .musicStar .glowContainer .starGlow {
@@ -672,23 +727,25 @@ body {
 .musicStars .musicStar .progressBar .progressMarker {
   width: 0;
   height: 0;
-  border-radius: 50%;
+  border-radius: 10px;
   position: relative;
-  top: -9.8px;
-  left: -9px;
+  top: -10px;
+  left: -14px;
 }
 
 .musicStars .musicStar .progressBar .progress {
   width: 100%;
   height: 0px;
-  -webkit-transition: width linear;
-  transition: width linear;
+  -webkit-transition: width linear, opacity .3s linear;
+  transition: width linear, opacity .3s linear;
   border-radius: 4px;
   position: relative;
   top: -2px;
 }
 
 .musicStars .musicStar .progressBar .title {
+  -webkit-transition: opacity .3s linear;
+  transition: opacity .3s linear;
   top: 10px;
   position: relative;
 }
@@ -714,6 +771,9 @@ body {
   }
   .musicStars .musicStar .progressBar .title {
     top: -12px;
+    text-align: center;
+    width: 200px;
+    left: -63px;
   }
   .musicStars .musicStar .glowContainer {
     display: inline-block;
@@ -723,6 +783,10 @@ body {
   }
   .musicStars .musicStar .glowContainer .musicStarImage {
     height: 34px;
+  }
+  .musicStars .musicStar .glowContainer .imgLayer {
+    position: absolute;
+    left: 8px;
   }
   .musicStars .musicStar .glowContainer .starGlow {
     background-position: center;

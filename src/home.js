@@ -55,7 +55,7 @@ export default function Home() {
           onMouseEnter={handleQuestionHover}
           onMouseLeave={handleQuestionOut}
         >
-          {`//WHO AM I?`}
+          {`//WHERE AM I?`}
           <span className='answer' style={{opacity: Opacity}} >
             {'\nI AM APOLLOS\nTHIS IS MY WORK\nCLICK THE STARS\nINQUIRE.'}
           </span>
